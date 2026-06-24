@@ -625,13 +625,30 @@ h3 {
   line-height: 1.2;
 }
 .item-game-stats {
-  font-size: 0.68rem;
-  color: #718096;
-  font-family: "SF Mono", "Fira Code", monospace;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: -2px;
   margin-bottom: 2px;
-  text-align: left;
+  font-size: 0.68rem;
+  gap: 8px;
+}
+.item-stats-main,
+.item-stats-secondary {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.item-stats-secondary {
+  margin-left: auto;
+  justify-content: flex-end;
+}
+.item-stat {
+  font-weight: 500;
+  color: inherit;
+  letter-spacing: 0;
 }
 .item-footer {
   display: flex;
@@ -644,13 +661,11 @@ h3 {
 .item-rate {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #475569;
 }
 .item-icons {
   font-size: 0.7rem;
   display: flex;
   gap: 8px;
-  color: #475569;
   align-items: center;
 }
 .item-icon {
@@ -672,8 +687,17 @@ h3 {
 }
 .item-icon-value {
   font-weight: 700;
-  color: #0f172a;
   line-height: 1;
+}
+.item-footer,
+.item-game-stats,
+.item-stat,
+.item-stats-main,
+.item-stats-secondary,
+.item-rate,
+.item-icons,
+.item-icon-value {
+  color: #718096;
 }
 .item-icon-graphic.deck-icon {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12'%3E%3Crect x='1' y='1' width='14' height='2.5' rx='0.75' fill='%2394a3b8'/%3E%3Crect x='2' y='4.5' width='12' height='2.5' rx='0.75' fill='%2394a3b8'/%3E%3Crect x='3' y='8' width='10' height='2.5' rx='0.75' fill='%2394a3b8'/%3E%3C/svg%3E");

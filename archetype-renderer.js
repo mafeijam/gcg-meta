@@ -155,14 +155,21 @@ function renderItem(card, extraClass = '') {
     .join('')
 
   const gameStats = (() => {
-    const p = []
-    if (card.cost && card.cost !== '-') {
-      p.push(`L${card.level} C${card.cost}`)
+    const mainStats = []
+    const secondaryStats = []
+    const addStat = (bucket, label, value, description) => {
+      if (value && value !== '-') {
+        bucket.push(`<span class="item-stat" aria-label="${description}">${label}${value}</span>`)
+      }
     }
-    if (card.ap && card.ap !== '-') {
-      p.push(`AP${card.ap} HP${card.hp}`)
-    }
-    return p.length ? `<div class="item-game-stats">${p.join(' · ')}</div>` : ''
+    addStat(mainStats, 'L', card.level, `Level ${card.level}`)
+    addStat(mainStats, 'C', card.cost, `Cost ${card.cost}`)
+    addStat(secondaryStats, 'AP', card.ap, `Attack Power ${card.ap}`)
+    addStat(secondaryStats, 'HP', card.hp, `Hit Points ${card.hp}`)
+    if (!mainStats.length && !secondaryStats.length) return ''
+    const mainHtml = mainStats.length ? `<div class="item-stats-main">${mainStats.join('')}</div>` : ''
+    const secondaryHtml = secondaryStats.length ? `<div class="item-stats-secondary">${secondaryStats.join('')}</div>` : ''
+    return `<div class="item-game-stats">${mainHtml}${secondaryHtml}</div>`
   })()
 
   return `<div class="archetype-item ${extraClass}${card.inWinner ? ' winner' : ''}${card.rarity?.startsWith('LR') ? ' is-lr' : ''}">
