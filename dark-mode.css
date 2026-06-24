@@ -1,0 +1,287 @@
+/* Global Dark Mode Styles */
+html.dark-mode body { background: #1a202c; color: #cbd5e0; }
+html.dark-mode .subtitle { color: #8291a7; }
+html.dark-mode h1, html.dark-mode h2, html.dark-mode h3 { color: #94a3b8; }
+
+/* Page Navigation */
+html.dark-mode .page-nav a { color: #a0aec0; }
+html.dark-mode .page-nav a:hover { color: #4a9fe3; }
+html.dark-mode .page-nav .active { color: #4a9fe3; }
+
+/* Unified Table Styles (Rank Table & Analysis Summary Tables) */
+html.dark-mode table,
+html.dark-mode .tab-pane table,
+html.dark-mode .core-table-wrap {
+  background: #2d3748;
+  color: #a0aec0;
+}
+
+html.dark-mode th {
+  background: #0f172a;
+  color: #a0aec0;
+  border-bottom-color: #334155;
+}
+
+html.dark-mode td {
+  border-bottom-color: #334155;
+}
+
+html.dark-mode tbody tr:nth-child(even) td {
+  background: #1e293b;
+}
+
+html.dark-mode tr:hover td {
+  background: #334155;
+}
+
+html.dark-mode a.arch-link { color: inherit; }
+html.dark-mode a.arch-link:hover { color: #4a9fe3; }
+html.dark-mode a.arch-link:hover .sig-cards { color: #4a9fe3; }
+html.dark-mode .analysis-cta { color: #4a9fe3; }
+html.dark-mode .sig-cards { color: #94a3b8; }
+html.dark-mode .tier-meta { color: #a0aec0; }
+
+/* Mobile Card View Overrides */
+@media (max-width: 768px) {
+  html.dark-mode table {
+    background: transparent !important;
+  }
+  html.dark-mode tr {
+    background: #1e293b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  html.dark-mode tbody tr td,
+  html.dark-mode tbody tr:nth-child(even) td,
+  html.dark-mode tbody tr:hover td {
+    background: transparent;
+  }
+  html.dark-mode tr::before {
+    background: #334155;
+  }
+  html.dark-mode tr:hover {
+    background: #1e293b;
+  }
+  html.dark-mode td[data-label]::before {
+    color: #718096;
+  }
+  html.dark-mode td[data-label='Score'] {
+    color: #a0aec0;
+  }
+  html.dark-mode td[data-label='Score']::before {
+    color: #718096;
+  }
+  html.dark-mode td[data-label='Use%'], 
+  html.dark-mode td[data-label='Win/Ev'], 
+  html.dark-mode td[data-label='Win/Dk'], 
+  html.dark-mode td[data-label='T4/Dk'] {
+    color: #94a3b8;
+  }
+  html.dark-mode td.combo-td,
+  html.dark-mode .combo-base,
+  html.dark-mode a.arch-link {
+    color: #a0aec0;
+  }
+}
+
+/* Custom Selects (Series Dropdown & Archetype Select) */
+html.dark-mode .mobile-series-dropdown,
+html.dark-mode .archetype-select-custom { 
+  background: #1a202c; 
+}
+
+html.dark-mode .msd-trigger,
+html.dark-mode .as-trigger {
+  background: #2d3748;
+  border-color: #4a5568;
+  color: #cbd5e0;
+}
+
+html.dark-mode .msd-trigger:hover,
+html.dark-mode .as-trigger:hover {
+  border-color: #718096;
+  background: #4a5568;
+}
+
+html.dark-mode .msd-trigger::after,
+html.dark-mode .as-trigger::after {
+  border-top-color: #a0aec0;
+}
+
+html.dark-mode .msd-options,
+html.dark-mode .as-options {
+  background: #1e293b;
+  border-color: #4a5568;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+html.dark-mode .msd-option,
+html.dark-mode .as-option {
+  border-bottom-color: #334155;
+  color: #cbd5e0;
+}
+
+html.dark-mode .msd-option:hover,
+html.dark-mode .as-option:hover {
+  background: #4a5568;
+}
+
+html.dark-mode .msd-option.active,
+html.dark-mode .as-option.active {
+  background: #2b6cb0;
+  color: #fff;
+}
+
+html.dark-mode .msd-label,
+html.dark-mode .as-opt-label,
+html.dark-mode .as-trigger-label {
+  color: #cbd5e0;
+}
+
+html.dark-mode .msd-group-label,
+html.dark-mode .as-opt-stats,
+html.dark-mode .as-trigger-stats {
+  color: #a0aec0;
+}
+
+/* Tabs */
+html.dark-mode .tabs { border-bottom-color: #4a5568; }
+html.dark-mode .tabs.stuck { background: #1a202c; }
+html.dark-mode .tab { color: #a0aec0; }
+html.dark-mode .tab:hover { background: #4a5568; color: #cbd5e0; }
+html.dark-mode .tab.active {
+  background: #1e293b;
+  border-color: #334155;
+  color: #667eea;
+  border-bottom-color: #1e293b;
+}
+html.dark-mode .tabs::before,
+html.dark-mode .tabs::after {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), transparent);
+}
+
+/* Archetype Analysis Specifics */
+html.dark-mode .archetype-item { background: #1e293b; border-color: #334155; box-shadow: 0 1px 3px rgba(0,0,0,.45); }
+html.dark-mode .archetype-item-bar { background: #2d3748; }
+html.dark-mode .archetype-item-bar[data-tier="1"] { background: #b91c1c; }
+html.dark-mode .archetype-item-bar[data-tier="2"] { background: #b45309; }
+html.dark-mode .archetype-item-bar[data-tier="3"] { background: #365314; }
+html.dark-mode .archetype-item-bar[data-tier="4"] { background: #1e3a8a; }
+html.dark-mode .archetype-item-bar[data-tier="5"] { background: #4c1d95; }
+
+html.dark-mode .item-id-group { color: #cbd5e0; }
+html.dark-mode .card-rarity { color: #94a3b8; }
+html.dark-mode .item-rate { color: #cbd5e0; }
+html.dark-mode .icon-wins { color: #f59e0b; }
+html.dark-mode .archetype-name { color: #cbd5e0; }
+html.dark-mode .archetype-type-heading { color: #94a3b8; border-bottom-color: #334155; }
+html.dark-mode .item-game-stats { color: #94a3b8; }
+html.dark-mode .item-icons { color: #a0aec0; }
+html.dark-mode .avg-dot { background: #111827; }
+html.dark-mode .avg-dot.filled.tier-1 { background: rgba(251, 146, 60, 0.30); }
+html.dark-mode .avg-dot.filled.tier-2 { background: rgba(251, 146, 60, 0.50); }
+html.dark-mode .avg-dot.filled.tier-3 { background: rgba(251, 146, 60, 0.70); }
+html.dark-mode .avg-dot.filled.tier-4 { background: rgba(251, 146, 60, 0.90); }
+
+/* Charts & Stats */
+html.dark-mode .archetype-chart-box { background: #1e293b; box-shadow: 0 1px 3px rgba(0,0,0,.45); }
+html.dark-mode .archetype-chart-box h4 { color: #cbd5e0; }
+html.dark-mode .chart-box { background: #1e293b; box-shadow: 0 1px 3px rgba(0,0,0,.45); }
+html.dark-mode .chart-tabs .tab { background: #1e293b; border-color: #334155; color: #a0aec0; }
+html.dark-mode .chart-tabs .tab.active { background: #4a5568; border-color: #334155; color: #cbd5e0; }
+html.dark-mode .bar-wrapper .bar { opacity: .35; }
+
+/* Signature Colors */
+html.dark-mode .sig-Blue { color: #63b3ed; }
+html.dark-mode .sig-Red { color: #fc8181; }
+html.dark-mode .sig-Green { color: #68d391; }
+html.dark-mode .sig-Yellow { color: #fbbf24; }
+html.dark-mode .sig-Purple { color: #b794f4; }
+html.dark-mode .sig-Black { color: #a0aec0; }
+html.dark-mode .sig-White { color: #cbd5e0; }
+html.dark-mode .sig-sep { color: #4a5568; }
+
+/* Badges & Overlays */
+html.dark-mode .feature-badge { background: #2d3748; color: #94a3b8; }
+html.dark-mode .wo-item { background: #1e293b; border-color: #334155; box-shadow: 0 1px 3px rgba(0,0,0,.45); }
+html.dark-mode .wo-id { color: #a0aec0; }
+html.dark-mode .card-img { border-color: #4a5568; }
+html.dark-mode .card-img-enlarge::before,
+html.dark-mode .sbs-tooltip::before {
+  background: rgba(0, 0, 0, 0.7);
+}
+html.dark-mode .sbs-section td.sbs-sep { border-right-color: #4a5568; }
+html.dark-mode .rank { color: #a0aec0; }
+html.dark-mode .card-cell code { background: #4a5568; }
+
+/* Combo Grid */
+html.dark-mode .cg-combo-heading { color: #cbd5e0; border-color: #475569; }
+html.dark-mode .cg-has-white { background: linear-gradient(90deg, var(--cg-a) 0%, #cbd5e0 65%, #cbd5e0 100%); }
+html.dark-mode .cg-card { background: #1e293b; border-color: #334155; }
+html.dark-mode .cg-card-id { color: #cbd5e0; }
+html.dark-mode .cg-card.is-lr .card-rarity,
+html.dark-mode .archetype-item.is-lr .card-rarity {
+  color: #fbbf24;
+}
+
+/* Modals & Popups */
+html.dark-mode .modal-content { background: #1e293b; }
+html.dark-mode .modal-header { border-bottom-color: #334155; }
+html.dark-mode .modal-header h2 { color: #cbd5e0; }
+html.dark-mode .modal-body a { color: #4a9fe3; }
+html.dark-mode .deck-preview-popup { background: #1e293b; border-color: #334155; }
+
+/* Tiers */
+html.dark-mode .deck-tier-1 { background: #b91c1c; }
+html.dark-mode .deck-tier-1-5 { background: #b45309; }
+html.dark-mode .deck-tier-2 { background: #ca8a04; }
+html.dark-mode .deck-tier-2-5 { background: #365314; }
+html.dark-mode .deck-tier-3 { background: #1e3a8a; }
+html.dark-mode .deck-tier-4 { background: #4c1d95; }
+html.dark-mode .deck-tier-1,
+html.dark-mode .deck-tier-1-5,
+html.dark-mode .deck-tier-2,
+html.dark-mode .deck-tier-2-5,
+html.dark-mode .deck-tier-3,
+html.dark-mode .deck-tier-4 {
+  color: #cbd5e0;
+}
+html.dark-mode .deck-tier-none { background: #334155; color: #94a3b8; }
+
+/* Other components */
+html.dark-mode .archetype-other-toggle { border-color: #4a5568; color: #a0aec0; }
+html.dark-mode .archetype-other-toggle:hover { background: #4a5568; }
+html.dark-mode .other-empty-msg { color: #4a5568; }
+html.dark-mode .deck-url-btn:hover { background: #1e3a5f; }
+html.dark-mode .deck-url-item { background: #2d3748; border-color: #4a5568; color: #63b3ed; }
+html.dark-mode .deck-url-item:hover { background: #4a5568; }
+html.dark-mode .deck-url-winner { background: #6b5a1e; border-color: #eab308; }
+html.dark-mode .type-badge-unit { background: #1e3a5f; color: #93c5fd; }
+html.dark-mode .type-badge-pilot { background: #1a3a2a; color: #6ee7b7; }
+html.dark-mode .type-badge-command { background: #3a1a1a; color: #fca5a5; }
+html.dark-mode .type-badge-base { background: #2a1a3a; color: #d8b4fe; }
+
+/* Loading State */
+html.dark-mode .tab-pane-loading { color: #94a3b8; }
+html.dark-mode .tab-pane-loading::before { border-color: #475569; border-top-color: #818cf8; }
+
+/* Controls */
+#dark-toggle {
+  position: fixed; top: 16px; right: 16px; z-index: 3000;
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid #cbd5e0;
+  background: #fff; color: #1a202c;
+  font-size: 1.1rem; line-height: 1;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,.12);
+  transition: all .15s, opacity .2s;
+}
+#dark-toggle:hover { background: #edf2f7; }
+html.dark-mode #dark-toggle { background: #2d3748; color: #cbd5e0; border-color: #4a5568; }
+html.dark-mode #dark-toggle:hover { background: #4a5568; }
+
+/* Floating Nav */
+html.dark-mode .nav-float-btn { background: #4a5568; color: #cbd5e0; }
+html.dark-mode .nav-float-menu { background: #1e293b; box-shadow: 0 4px 20px rgba(0,0,0,.4); }
+html.dark-mode .nav-float-menu a { color: #cbd5e0; }
+html.dark-mode .nav-float-menu a:hover { background: #4a5568; }
+html.dark-mode .nav-float-menu a.active { background: #4a5568; color: #4a9fe3; }
