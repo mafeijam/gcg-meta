@@ -179,8 +179,16 @@ function renderItem(card, extraClass = '') {
     <div class="item-footer">
       <div class="item-rate" data-tier="${tierId}">${rate}%</div>
       <div class="item-icons">
-        <span class="icon-deck" title="Decks included">${card.decksIncluded}</span>
-        ${card.winnerDeckCount ? `<span class="icon-wins" title="Wins">${card.winnerDeckCount}</span>` : ''}
+        <span class="item-icon" role="img" aria-label="Decks included: ${card.decksIncluded}" title="Decks included: ${card.decksIncluded}">
+          <span class="item-icon-graphic deck-icon" aria-hidden="true"></span>
+          <span class="item-icon-value">${card.decksIncluded}</span>
+        </span>
+        ${card.winnerDeckCount ? `
+          <span class="item-icon" role="img" aria-label="Wins: ${card.winnerDeckCount}" title="Wins: ${card.winnerDeckCount}">
+            <span class="item-icon-graphic win-icon" aria-hidden="true"></span>
+            <span class="item-icon-value">${card.winnerDeckCount}</span>
+          </span>
+        ` : ''}
       </div>
     </div>
     <div class="archetype-item-bar" data-tier="${tierId}"></div>

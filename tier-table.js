@@ -265,6 +265,9 @@ function switchSeries(idx) {
   var params = new URLSearchParams()
   params.set('series', SERIES_VALUES[idx])
   history.replaceState(null, '', window.location.pathname + '?' + params.toString())
+  document.querySelector('.page-nav a[href*="archetype-analysis"]').href = 'archetype-analysis.html?series=' + SERIES_VALUES[idx]
+  var activePane = document.querySelector('.series-pane.active')
+  if (activePane) activePane.scrollIntoView({ behavior: 'instant', block: 'start' })
 }
 var urlParams = new URLSearchParams(window.location.search)
 var seriesVal = urlParams.get('series')

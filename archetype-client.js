@@ -288,6 +288,7 @@ function initSeriesContent(seriesId, pane) {
     }
   }
   switchArchetype(seriesId, archIdx, urlTargetArchetype !== null)
+  urlTargetArchetype = null
 }
 
 function toggleArchetypeSelect(seriesId) {
@@ -333,6 +334,8 @@ function selectSeries(value, el, doUpdateUrl) {
     .querySelectorAll('.msd-options')
     .forEach((o) => o.classList.remove('open'))
   if (doUpdateUrl) updateUrl(value, null)
+  var navLink = document.querySelector('.page-nav a[href*="index"]')
+  if (navLink) navLink.href = 'index.html?series=' + value
 }
 
 function syncOtherCardsState() {
@@ -671,20 +674,6 @@ function updateTabsScrollIndicators() {
 document.addEventListener('scroll', updateTabsScrollIndicators, true)
 window.addEventListener('resize', updateTabsScrollIndicators)
 requestAnimationFrame(updateTabsScrollIndicators)
-
-// Sticky tabs background
-;(() => {
-  document.querySelectorAll('.tabs').forEach((tabs) => {
-    const sentinel = document.createElement('div')
-    sentinel.style.cssText =
-      'position:absolute;top:0;left:0;width:1px;height:1px'
-    tabs.parentElement.insertBefore(sentinel, tabs)
-    new IntersectionObserver(
-      ([e]) => tabs.classList.toggle('stuck', !e.isIntersecting),
-      { rootMargin: '-1px 0px 0px' },
-    ).observe(sentinel)
-  })
-})()
 
 function initNav() {
   if (urlTargetSeries !== null) {

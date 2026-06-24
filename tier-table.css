@@ -128,7 +128,7 @@ a.arch-link:hover .sig-cards {
   top: 0;
   z-index: 200;
   background: #f5f7fa;
-  padding-bottom: 8px;
+  margin-bottom: 8px;
 }
 .msd-trigger {
   padding: 10px 30px 10px 12px;
@@ -176,7 +176,6 @@ a.arch-link:hover .sig-cards {
   background: #fff;
   border: 1px solid #e2e8f0;
   border-radius: 6px;
-  margin-top: 4px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   display: none;
   max-height: 400px;
@@ -208,6 +207,7 @@ a.arch-link:hover .sig-cards {
 /* ── Series pane visibility ── */
 .series-pane {
   display: none;
+  scroll-margin-top: 55px;
 }
 .series-pane.active {
   display: block;

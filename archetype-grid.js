@@ -52,6 +52,11 @@ if (isMain) {
 
   const dataVersion = assetHash(join(__dirname, 'data', 'tournaments-all.json'))
 
+  const shortLabel = (l) =>
+    l.startsWith('ニュータイプチャレンジ 2026 ')
+      ? 'NTC ' + l.slice('ニュータイプチャレンジ 2026 '.length)
+      : l
+
   // Generate per-series shell fragments + per-archetype fragments
   let archFragCount = 0
   for (const s of seriesData) {
@@ -87,23 +92,33 @@ if (isMain) {
 <h1>GCG Deck Archetype Analysis</h1>
 <p class="subtitle">${allTournaments.reduce((a, s) => a + s.events.length, 0)} events · ${seriesData.reduce((a, s) => a + s.totalEvents, 0)} winning decks · ${seriesData.reduce((a, s) => a + s.totalDecks, 0)} total decks</p>
 
-<div class="tabs">
-  <div class="mobile-series-dropdown">
+<div class="mobile-series-dropdown">
     <div class="msd-trigger" onclick="toggleSeriesDropdown(this)">
-      <span class="msd-label">${seriesData[0].labelShort} · ${seriesData[0].totalEvents} events</span>
+      <span class="msd-label">${shortLabel(seriesData[0].label)} · ${seriesData[0].totalEvents} events</span>
     </div>
     <div class="msd-options">
-      ${seriesData
-        .map(
-          (s, i) => `
-      <div class="msd-option${i === 0 ? ' active' : ''}" onclick="selectSeries('${s.value}', this)">
-        ${s.labelShort} · ${s.totalEvents} events
-      </div>`,
-        )
-        .join('\n')}
+      ${(() => {
+        const typeVal = (v) => v.startsWith('egman-') ? 2 : v.startsWith('limitless-') ? 3 : 1
+        const groups = []
+        let curType = 0
+        seriesData.forEach((s, i) => {
+          const t = typeVal(s.value)
+          if (t !== curType) {
+            curType = t
+            groups.push({ label: ['NTC', 'Egman', 'Limitless'][t - 1], indices: [] })
+          }
+          groups[groups.length - 1].indices.push(i)
+        })
+        return groups.map((g) =>
+          `<div class="msd-group-label">${g.label}</div>\n` +
+          g.indices.map((i) => {
+            const s = seriesData[i]
+            return `<div class="msd-option${i === 0 ? ' active' : ''}" onclick="selectSeries('${s.value}', this)">${shortLabel(s.label)} · ${s.totalEvents} events</div>`
+          }).join('\n')
+        ).join('\n')
+      })()}
     </div>
   </div>
-</div>
 
     ${seriesData.map((s, i) => `<div class="tab-pane${i === 0 ? ' active' : ''}" id="series-${s.value}"></div>`).join('\n')}
 
