@@ -243,6 +243,10 @@ th.num,
 td.num {
   text-align: right;
   font-variant-numeric: tabular-nums;
+  color: var(--table-num-text);
+}
+th.num {
+  color: var(--table-header-text);
 }
 tbody tr:nth-child(even) td {
   background: var(--table-row-alt);
@@ -372,6 +376,7 @@ html.dark-mode .combo-base {
     align-items: center;
     gap: 4px;
     padding: 0 0 4px;
+    color: var(--deck-tier-text);
   }
   .page-tier td[data-label='Score'] {
     grid-column: 4;
@@ -380,6 +385,7 @@ html.dark-mode .combo-base {
     align-items: flex-end;
     font-size: 1rem;
     padding: 0 0 4px;
+    color: var(--deck-tier-text);
   }
   .page-tier tr::before {
     content: '';
@@ -409,22 +415,20 @@ html.dark-mode .combo-base {
     grid-column: 1 / -1;
     grid-row: 2;
     display: block;
-    padding: 10px 0 4px;
-    margin-top: 4px;
-    margin-bottom: 2px;
+    padding: 12px 0;
     font-size: 1rem;
   }
 
   /* Row 3: Decks, Wins, Top4 */
-  .page-tier td[data-label='Decks'] { grid-column: 1; grid-row: 3; }
-  .page-tier td[data-label='Wins']  { grid-column: 2; grid-row: 3; }
-  .page-tier td[data-label='Top4']  { grid-column: 4; grid-row: 3; }
+  .page-tier td[data-label='Decks'] { grid-column: 1; grid-row: 3; color: var(--deck-tier-text); }
+  .page-tier td[data-label='Wins']  { grid-column: 2; grid-row: 3; color: var(--deck-tier-text); }
+  .page-tier td[data-label='Top4']  { grid-column: 4; grid-row: 3; color: var(--deck-tier-text); }
 
   /* Row 4: Use%, Win/Ev, Win/Dk, T4/Dk */
-  .page-tier td[data-label='Use%']   { grid-column: 1; grid-row: 4; font-size: 0.82rem; }
-  .page-tier td[data-label='Win/Ev'] { grid-column: 2; grid-row: 4; font-size: 0.82rem; }
-  .page-tier td[data-label='Win/Dk'] { grid-column: 3; grid-row: 4; font-size: 0.82rem; }
-  .page-tier td[data-label='T4/Dk']  { grid-column: 4; grid-row: 4; font-size: 0.82rem; }
+  .page-tier td[data-label='Use%']   { grid-column: 1; grid-row: 4; font-size: 0.82rem; color: var(--deck-tier-text); }
+  .page-tier td[data-label='Win/Ev'] { grid-column: 2; grid-row: 4; font-size: 0.82rem; color: var(--deck-tier-text); }
+  .page-tier td[data-label='Win/Dk'] { grid-column: 3; grid-row: 4; font-size: 0.82rem; color: var(--deck-tier-text); }
+  .page-tier td[data-label='T4/Dk']  { grid-column: 4; grid-row: 4; font-size: 0.82rem; color: var(--deck-tier-text); }
 
   /* Row 5: Analysis */
   .page-tier td.analysis-td {
@@ -908,6 +912,20 @@ h3 {
 .archetype-item.winner {
   outline: 2px solid var(--card-rarity-lr-color);
   outline-offset: 1px;
+}
+.archetype-item.winner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  background: linear-gradient(
+    135deg,
+    var(--gloss-start) 0%,
+    var(--gloss-mid) 40%,
+    transparent 50%,
+    var(--gloss-end) 100%
+  );
+  pointer-events: none;
 }
 .archetype-name {
   font-size: 0.72rem;

@@ -563,6 +563,14 @@ function computeGroupCounts(groupDecks, winnerGroup, cardToGroup) {
   }
 }
 
+function calculateTechScore(wins, decks, totalArchetypeDecks) {
+  const inclusionRate = decks / totalArchetypeDecks
+  if (inclusionRate > 0.40 || inclusionRate < 0.01) return 0
+  if (wins < 2) return 0
+  const score = (wins / decks) * (1 - inclusionRate)
+  return Math.round(score * 1000) / 1000
+}
+
 // Serialize a deck's card IDs and quantities into a compact string
 function serializeDeckCards(deck, lookup, typeOrder) {
   const cardQty = deck.reduce((acc, card) => {
@@ -759,11 +767,8 @@ function processArchetype(combo, group, context) {
       ? (groupDeckCount[groupKey] || 0) / count
       : cardData.decksIncluded / count
 
-    const support = winnerDecksWithGroup >= 2
-    const rawLift =
-      overallRate > 0 ? winnerDecksWithGroup / totalWinnerDecks / overallRate : 0
-    const inWinner =
-      winnerGroup && info.effect !== '-' && support && rawLift > 1.5
+    const inclusionDecks = groupKey ? (groupDeckCount[groupKey] || 0) : cardData.decksIncluded
+    const techScore = calculateTechScore(winnerDecksWithGroup, inclusionDecks, count)
 
     return {
       cardId,
@@ -780,9 +785,18 @@ function processArchetype(combo, group, context) {
       inclusionRate: +(cardData.decksIncluded / count).toFixed(4),
       winnerDeckCount: winnerCounts[cardId] || 0,
       avgQty: Math.round(cardData.totalQty / cardData.decksIncluded),
-      inWinner,
+      inWinner: false,
+      techScore,
     }
   })
+
+  const topTechCards = allCards
+    .filter(c => c.techScore > 0)
+    .sort((a, b) => b.techScore - a.techScore)
+    .slice(0, 3)
+  for (const card of topTechCards) {
+    card.inWinner = true
+  }
 
   const rarityScore = (rarity) =>
     rarity?.startsWith('LR') ? 100 : rarity?.startsWith('R') ? 50 : 0

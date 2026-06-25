@@ -45,7 +45,6 @@
   --c-purple-100: #f3e8ff;
   --c-purple-200: #d8b4fe;
   --c-purple-300: #c4b5fd;
-  --c-purple-400: #b794f4;
   --c-purple-500: #805ad5;
   --c-purple-600: #6b21a8;
   --c-purple-800: #4c1d95;
@@ -54,7 +53,6 @@
   /* ── Red ── */
   --c-red-100: #fee2e2;
   --c-red-300: #fca5a5;
-  --c-red-400: #fc8181;
   --c-red-500: #e53e3e;
   --c-red-700: #b91c1c;
   --c-red-800: #991b1b;
@@ -69,8 +67,6 @@
   /* ── Amber / Gold ── */
   --c-amber-400: #fbbf24;
   --c-amber-500: #b7791f;
-  --c-amber-600: #f59e0b;
-  --c-amber-650: #d97706;
   --c-amber-700: #ca8a04;
   --c-amber-850: #6b5a1e;
   --c-gold: #d69e2e;
@@ -79,13 +75,11 @@
   /* ── Yellow ── */
   --c-yellow-50: #fff9db;
   --c-yellow-500: #eab308;
-  --c-yellow-600: #ca8a04;
 
   /* ── Green ── */
   --c-green-100: #d1fae5;
   --c-green-200: #6ee7b7;
   --c-green-300: #86efac;
-  --c-green-400: #68d391;
   --c-green-600: #38a169;
   --c-green-700: #365314;
   --c-green-800: #065f46;
@@ -94,22 +88,15 @@
   /* ── Shadows ── */
   --c-shadow-sm: rgba(0, 0, 0, 0.08);
   --c-shadow-md: rgba(0, 0, 0, 0.12);
-  --c-shadow-md-alt: rgba(0, 0, 0, 0.15);
   --c-shadow-lg: rgba(0, 0, 0, 0.25);
-  --c-shadow-xl: rgba(0, 0, 0, 0.35);
-  --c-shadow-2xl: rgba(0, 0, 0, 0.45);
-  --c-shadow-3xl: rgba(0, 0, 0, 0.5);
-
   /* ── Overlays ── */
   --c-overlay-card: rgba(0, 0, 0, 0.2);
   --c-overlay: rgba(0, 0, 0, 0.5);
   --c-overlay-strong: rgba(0, 0, 0, 0.7);
   --c-qty-badge: rgba(26, 32, 44, 0.75);
-  --c-white-alpha-8: rgba(255, 255, 255, 0.08);
 
   /* ── Dark-mode shadows ── */
   --c-shadow-sm-dark: rgba(0, 0, 0, 0.3);
-  --c-shadow-3xl-dark: rgba(0, 0, 0, 0.4);
   --c-shadow-2xl-dark: rgba(0, 0, 0, 0.45);
 
   /* ── Avg-dot fills ── */
@@ -186,6 +173,7 @@
   --table-row-alt: var(--bg-alt);
   --table-row-hover: var(--bg-hover);
   --table-row-odd: var(--bg-card);
+  --table-num-text: var(--c-gray-700);
 
   /* Dropdowns */
   --dropdown-bg: var(--bg-card);
@@ -238,6 +226,11 @@
   --dark-toggle-text: var(--text-body);
   --dark-toggle-border: var(--border);
   --dark-toggle-hover: var(--bg-hover);
+
+  /* Gloss */
+  --gloss-start: rgba(214,158,46,0.12);
+  --gloss-mid: rgba(214,158,46,0.06);
+  --gloss-end: rgba(214,158,46,0.04);
 
   /* Misc */
   --msd-option-active-bg: var(--c-blue-50);
@@ -334,6 +327,7 @@ html.dark-mode {
   --table-row-alt: var(--c-gray-850);
   --table-row-hover: var(--c-gray-725);
   --table-row-odd: var(--c-gray-775);
+  --table-num-text: var(--c-gray-500);
 
   /* Dropdowns */
   --dropdown-bg: var(--c-gray-750);
@@ -386,6 +380,11 @@ html.dark-mode {
   --dark-toggle-text: var(--text-muted);
   --dark-toggle-border: var(--border-strong);
   --dark-toggle-hover: var(--bg-hover-strong);
+
+  /* Gloss */
+  --gloss-start: rgba(255,255,255,0.18);
+  --gloss-mid: rgba(255,255,255,0.08);
+  --gloss-end: rgba(255,255,255,0.04);
 
   /* Misc */
   --msd-option-active-bg: var(--c-blue-700);
