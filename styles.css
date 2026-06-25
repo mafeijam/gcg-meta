@@ -326,8 +326,8 @@ a.arch-link:hover .sig-cards {
 .series-pane.active {
   display: block;
 }
-html.dark-mode .combo-base {
-  color: var(--c-gray-500);
+.combo-name-wrapper .combo-base {
+  color: var(--table-combo-base-text);
 }
 .table-wrap {
   overflow-x: auto;
@@ -1556,6 +1556,14 @@ h3 {
     max-height: 45vh;
     width: auto;
     max-width: 92vw;
+  }
+  .cg-has-white {
+    background: linear-gradient(
+      90deg,
+      var(--cg-a) 0%,
+      var(--combo-heading-gradient) 85%,
+      var(--combo-heading-gradient-soft) 100%
+    );
   }
 }
 

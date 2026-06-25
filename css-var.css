@@ -173,6 +173,7 @@
   --table-row-hover: var(--bg-hover);
   --table-row-odd: var(--bg-card);
   --table-num-text: var(--c-gray-700);
+  --table-combo-base-text: var(--c-gray-750);
 
   /* Dropdowns */
   --dropdown-bg: var(--bg-card);
@@ -327,6 +328,7 @@ html.dark-mode {
   --table-row-hover: var(--c-gray-725);
   --table-row-odd: var(--c-gray-775);
   --table-num-text: var(--c-gray-500);
+  --table-combo-base-text: var(--c-gray-500);
 
   /* Dropdowns */
   --dropdown-bg: var(--c-gray-750);
