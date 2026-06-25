@@ -17,7 +17,9 @@
   --c-gray-700: #475569;
   --c-gray-725: #334155;
   --c-gray-750: #2d3748;
+  --c-gray-775: #242b3a;
   --c-gray-800: #1a202c;
+  --c-gray-875: #141b2b;
   --c-gray-850: #1e293b;
   --c-gray-900: #0f172a;
   --c-gray-950: #111827;
@@ -183,12 +185,13 @@
   --table-border-color: var(--border);
   --table-row-alt: var(--bg-alt);
   --table-row-hover: var(--bg-hover);
+  --table-row-odd: var(--bg-card);
 
   /* Dropdowns */
   --dropdown-bg: var(--bg-card);
   --dropdown-border: var(--border);
-  --dropdown-text: var(--text-body);
-  --dropdown-hover: var(--bg-hover);
+  --dropdown-text: var(--c-gray-700);
+  --dropdown-hover: var(--c-gray-100);
   --dropdown-active-bg: var(--msd-option-active-bg);
   --dropdown-active-text: var(--msd-option-active-text);
 
@@ -323,18 +326,19 @@ html.dark-mode {
   --type-badge-base-text: var(--c-purple-200);
 
   /* Tables */
-  --table-bg: var(--c-gray-750);
-  --table-text: var(--c-gray-500);
-  --table-header-bg: var(--c-gray-900);
+  --table-bg: var(--c-gray-850);
+  --table-text: var(--c-gray-550);
+  --table-header-bg: var(--c-gray-875);
   --table-header-text: var(--c-gray-500);
-  --table-border-color: var(--c-gray-725);
+  --table-border-color: var(--c-gray-800);
   --table-row-alt: var(--c-gray-850);
   --table-row-hover: var(--c-gray-725);
+  --table-row-odd: var(--c-gray-775);
 
   /* Dropdowns */
   --dropdown-bg: var(--c-gray-750);
   --dropdown-border: var(--c-gray-650);
-  --dropdown-text: var(--c-gray-400);
+  --dropdown-text: var(--c-gray-500);
   --dropdown-hover: var(--c-gray-650);
   --dropdown-active-bg: var(--c-blue-700);
   --dropdown-active-text: var(--c-white);
@@ -358,8 +362,8 @@ html.dark-mode {
   --chart-tab-active-text: var(--c-gray-400);
 
   /* Combo Headings */
-  --combo-heading-text: var(--c-gray-300);
-  --combo-heading-light-text: var(--c-gray-400);
+  --combo-heading-text: var(--c-gray-500);
+  --combo-heading-light-text: var(--c-gray-500);
   --combo-heading-border: var(--c-gray-700);
   --combo-heading-gradient: var(--c-gray-400);
   --combo-heading-gradient-soft: var(--c-gray-400);

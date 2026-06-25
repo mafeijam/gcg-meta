@@ -100,6 +100,7 @@ h3 {
   padding: 10px 30px 10px 12px;
   background: var(--dropdown-bg);
   border: 1px solid var(--dropdown-border);
+  color: var(--dropdown-text);
   border-radius: 6px;
   cursor: pointer;
   display: flex;
@@ -156,6 +157,7 @@ h3 {
   cursor: pointer;
   border-bottom: 1px solid var(--table-border-color);
   font-size: 0.85rem;
+  color: var(--dropdown-text);
   transition: background 0.12s;
 }
 .msd-option:last-child {
@@ -245,6 +247,9 @@ td.num {
 tbody tr:nth-child(even) td {
   background: var(--table-row-alt);
 }
+tbody tr:nth-child(odd) td {
+  background: var(--table-row-odd);
+}
 tbody tr:hover td {
   background: var(--table-row-hover);
 }
@@ -293,6 +298,9 @@ a.arch-link:hover .sig-cards {
 .series-pane.active {
   display: block;
 }
+html.dark-mode .combo-base {
+  color: var(--c-gray-500);
+}
 .table-wrap {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -331,7 +339,7 @@ a.arch-link:hover .sig-cards {
     margin-bottom: 16px;
     border-radius: 10px;
     background: var(--table-bg);
-    padding: 6px 14px 14px;
+    padding: 0 14px 14px;
     box-shadow: var(--shadow-card);
     border-bottom: none;
     position: relative;
@@ -363,7 +371,7 @@ a.arch-link:hover .sig-cards {
     flex-direction: row;
     align-items: center;
     gap: 4px;
-    padding: 4px 0 8px;
+    padding: 0 0 4px;
   }
   .page-tier td[data-label='Score'] {
     grid-column: 4;
@@ -371,7 +379,7 @@ a.arch-link:hover .sig-cards {
     text-align: right;
     align-items: flex-end;
     font-size: 1rem;
-    padding: 4px 0 8px;
+    padding: 0 0 4px;
   }
   .page-tier tr::before {
     content: '';
@@ -478,6 +486,7 @@ a.arch-link:hover .sig-cards {
   }
   .page-tier .tier-meta {
     text-align: left;
+    margin-bottom: 8px;
   }
   .page-tier .tier-meta strong {
     display: block;
