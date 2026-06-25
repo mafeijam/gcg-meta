@@ -24,7 +24,6 @@
   --c-gray-900: #0f172a;
   --c-gray-950: #111827;
 
-
   /* ── Blue ── */
   --c-blue-50: #ebf8ff;
   --c-blue-100: #dbeafe;
@@ -228,9 +227,9 @@
   --dark-toggle-hover: var(--bg-hover);
 
   /* Gloss */
-  --gloss-start: rgba(214,158,46,0.12);
-  --gloss-mid: rgba(214,158,46,0.06);
-  --gloss-end: rgba(214,158,46,0.04);
+  --gloss-start: rgba(214, 158, 46, 0.12);
+  --gloss-mid: rgba(214, 158, 46, 0.06);
+  --gloss-end: rgba(214, 158, 46, 0.04);
 
   /* Misc */
   --msd-option-active-bg: var(--c-blue-50);
@@ -306,7 +305,7 @@ html.dark-mode {
   --tier-color-5: var(--c-purple-800);
   --tier-none-bg: var(--c-gray-725);
   --tier-none-text: var(--c-gray-550);
-  --deck-tier-text: var(--text-body);
+  --deck-tier-text: var(--c-gray-300);
 
   /* Type Badges */
   --type-badge-unit-bg: var(--c-blue-850);
@@ -357,7 +356,7 @@ html.dark-mode {
 
   /* Combo Headings */
   --combo-heading-text: var(--c-gray-500);
-  --combo-heading-light-text: var(--c-gray-500);
+  --combo-heading-light-text: var(--c-gray-400);
   --combo-heading-border: var(--c-gray-700);
   --combo-heading-gradient: var(--c-gray-400);
   --combo-heading-gradient-soft: var(--c-gray-400);
@@ -382,9 +381,9 @@ html.dark-mode {
   --dark-toggle-hover: var(--bg-hover-strong);
 
   /* Gloss */
-  --gloss-start: rgba(255,255,255,0.18);
-  --gloss-mid: rgba(255,255,255,0.08);
-  --gloss-end: rgba(255,255,255,0.04);
+  --gloss-start: rgba(255, 255, 255, 0.18);
+  --gloss-mid: rgba(255, 255, 255, 0.08);
+  --gloss-end: rgba(255, 255, 255, 0.04);
 
   /* Misc */
   --msd-option-active-bg: var(--c-blue-700);

@@ -4,9 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans JP",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Noto Sans JP', sans-serif;
   background: var(--bg-body);
   color: var(--text-body);
   margin: 0;
@@ -79,7 +77,9 @@ h3 {
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow-card);
-  transition: all .15s, opacity .2s;
+  transition:
+    all 0.15s,
+    opacity 0.2s;
 }
 
 #dark-toggle:hover {
@@ -91,7 +91,7 @@ h3 {
   display: block;
   width: 100%;
   position: sticky;
-  top: 0;
+  top: 1px;
   z-index: 200;
   background: var(--bg-body);
   margin-bottom: 8px;
@@ -184,13 +184,34 @@ h3 {
   min-width: 3.2em;
   text-align: center;
 }
-.deck-tier-1 { background: var(--tier-color-1); color: var(--deck-tier-text); }
-.deck-tier-1-5 { background: var(--tier-color-1-5); color: var(--deck-tier-text); }
-.deck-tier-2 { background: var(--tier-color-2); color: var(--deck-tier-text); }
-.deck-tier-2-5 { background: var(--tier-color-2-5); color: var(--deck-tier-text); }
-.deck-tier-3 { background: var(--tier-color-3); color: var(--deck-tier-text); }
-.deck-tier-4 { background: var(--tier-color-4); color: var(--deck-tier-text); }
-.deck-tier-none { background: var(--tier-none-bg); color: var(--tier-none-text); }
+.deck-tier-1 {
+  background: var(--tier-color-1);
+  color: var(--deck-tier-text);
+}
+.deck-tier-1-5 {
+  background: var(--tier-color-1-5);
+  color: var(--deck-tier-text);
+}
+.deck-tier-2 {
+  background: var(--tier-color-2);
+  color: var(--deck-tier-text);
+}
+.deck-tier-2-5 {
+  background: var(--tier-color-2-5);
+  color: var(--deck-tier-text);
+}
+.deck-tier-3 {
+  background: var(--tier-color-3);
+  color: var(--deck-tier-text);
+}
+.deck-tier-4 {
+  background: var(--tier-color-4);
+  color: var(--deck-tier-text);
+}
+.deck-tier-none {
+  background: var(--tier-none-bg);
+  color: var(--tier-none-text);
+}
 
 /* ── Color Dot ── */
 .color-dot {
@@ -257,7 +278,9 @@ tbody tr:nth-child(odd) td {
 tbody tr:hover td {
   background: var(--table-row-hover);
 }
-th.analysis-hdr, td.analysis-td, .analysis-col {
+th.analysis-hdr,
+td.analysis-td,
+.analysis-col {
   display: none;
 }
 .combo-name-wrapper {
@@ -272,7 +295,8 @@ th.analysis-hdr, td.analysis-td, .analysis-col {
   font-weight: 400;
   margin-left: 4px;
 }
-.mob-icon, .mob-label {
+.mob-icon,
+.mob-label {
   display: none;
 }
 .tier-meta {
@@ -331,7 +355,12 @@ html.dark-mode .combo-base {
     box-shadow: none;
     border-radius: 0;
   }
-  .page-tier table, .page-tier thead, .page-tier tbody, .page-tier th, .page-tier tr, .page-tier td {
+  .page-tier table,
+  .page-tier thead,
+  .page-tier tbody,
+  .page-tier th,
+  .page-tier tr,
+  .page-tier td {
     display: block;
   }
   .page-tier thead {
@@ -395,13 +424,27 @@ html.dark-mode .combo-base {
     margin: -6px -14px 0;
     pointer-events: none;
   }
-  .page-tier tr[data-tier="none"]::before { background: var(--tier-none-bg); }
-  .page-tier tr[data-tier="1"]::before { background: var(--tier-color-1); }
-  .page-tier tr[data-tier="1.5"]::before { background: var(--tier-color-1-5); }
-  .page-tier tr[data-tier="2"]::before { background: var(--tier-color-2); }
-  .page-tier tr[data-tier="2.5"]::before { background: var(--tier-color-2-5); }
-  .page-tier tr[data-tier="3"]::before { background: var(--tier-color-3); }
-  .page-tier tr[data-tier="4"]::before { background: var(--tier-color-4); }
+  .page-tier tr[data-tier='none']::before {
+    background: var(--tier-none-bg);
+  }
+  .page-tier tr[data-tier='1']::before {
+    background: var(--tier-color-1);
+  }
+  .page-tier tr[data-tier='1.5']::before {
+    background: var(--tier-color-1-5);
+  }
+  .page-tier tr[data-tier='2']::before {
+    background: var(--tier-color-2);
+  }
+  .page-tier tr[data-tier='2.5']::before {
+    background: var(--tier-color-2-5);
+  }
+  .page-tier tr[data-tier='3']::before {
+    background: var(--tier-color-3);
+  }
+  .page-tier tr[data-tier='4']::before {
+    background: var(--tier-color-4);
+  }
   .page-tier td[data-label='Tier'] .deck-tier {
     background: transparent;
     padding: 0;
@@ -420,15 +463,47 @@ html.dark-mode .combo-base {
   }
 
   /* Row 3: Decks, Wins, Top4 */
-  .page-tier td[data-label='Decks'] { grid-column: 1; grid-row: 3; color: var(--deck-tier-text); }
-  .page-tier td[data-label='Wins']  { grid-column: 2; grid-row: 3; color: var(--deck-tier-text); }
-  .page-tier td[data-label='Top4']  { grid-column: 4; grid-row: 3; color: var(--deck-tier-text); }
+  .page-tier td[data-label='Decks'] {
+    grid-column: 1;
+    grid-row: 3;
+    color: var(--deck-tier-text);
+  }
+  .page-tier td[data-label='Wins'] {
+    grid-column: 2;
+    grid-row: 3;
+    color: var(--deck-tier-text);
+  }
+  .page-tier td[data-label='Top4'] {
+    grid-column: 4;
+    grid-row: 3;
+    color: var(--deck-tier-text);
+  }
 
   /* Row 4: Use%, Win/Ev, Win/Dk, T4/Dk */
-  .page-tier td[data-label='Use%']   { grid-column: 1; grid-row: 4; font-size: 0.82rem; color: var(--deck-tier-text); }
-  .page-tier td[data-label='Win/Ev'] { grid-column: 2; grid-row: 4; font-size: 0.82rem; color: var(--deck-tier-text); }
-  .page-tier td[data-label='Win/Dk'] { grid-column: 3; grid-row: 4; font-size: 0.82rem; color: var(--deck-tier-text); }
-  .page-tier td[data-label='T4/Dk']  { grid-column: 4; grid-row: 4; font-size: 0.82rem; color: var(--deck-tier-text); }
+  .page-tier td[data-label='Use%'] {
+    grid-column: 1;
+    grid-row: 4;
+    font-size: 0.82rem;
+    color: var(--deck-tier-text);
+  }
+  .page-tier td[data-label='Win/Ev'] {
+    grid-column: 2;
+    grid-row: 4;
+    font-size: 0.82rem;
+    color: var(--deck-tier-text);
+  }
+  .page-tier td[data-label='Win/Dk'] {
+    grid-column: 3;
+    grid-row: 4;
+    font-size: 0.82rem;
+    color: var(--deck-tier-text);
+  }
+  .page-tier td[data-label='T4/Dk'] {
+    grid-column: 4;
+    grid-row: 4;
+    font-size: 0.82rem;
+    color: var(--deck-tier-text);
+  }
 
   /* Row 5: Analysis */
   .page-tier td.analysis-td {
@@ -679,7 +754,7 @@ h3 {
 .wo-id {
   align-self: flex-end;
   font-size: 0.72rem;
-  font-family: "SF Mono", "Fira Code", monospace;
+  font-family: 'SF Mono', 'Fira Code', monospace;
   color: var(--c-gray-800);
   display: flex;
   justify-content: space-between;
@@ -704,7 +779,7 @@ h3 {
 .archetype-select-custom {
   position: sticky;
   top: 42px;
-  z-index: 999;
+  z-index: 100;
   width: 100%;
   margin-bottom: 12px;
   font-size: 0.85rem;
@@ -811,7 +886,7 @@ h3 {
   color: var(--text-secondary);
   font-size: 0.78rem;
   white-space: nowrap;
-  font-family: "SF Mono", "Fira Code", monospace;
+  font-family: 'SF Mono', 'Fira Code', monospace;
 }
 .as-trigger-label {
   display: flex;
@@ -894,19 +969,19 @@ h3 {
   border-radius: 0 0 6px 6px;
   background: var(--tier-bar-base);
 }
-.archetype-item-bar[data-tier="1"] {
+.archetype-item-bar[data-tier='1'] {
   background: var(--tier-color-1);
 }
-.archetype-item-bar[data-tier="2"] {
+.archetype-item-bar[data-tier='2'] {
   background: var(--tier-color-1-5);
 }
-.archetype-item-bar[data-tier="3"] {
+.archetype-item-bar[data-tier='3'] {
   background: var(--tier-color-2);
 }
-.archetype-item-bar[data-tier="4"] {
+.archetype-item-bar[data-tier='4'] {
   background: var(--tier-color-2-5);
 }
-.archetype-item-bar[data-tier="5"] {
+.archetype-item-bar[data-tier='5'] {
   background: var(--tier-color-3);
 }
 .archetype-item.winner {
@@ -948,7 +1023,7 @@ h3 {
 }
 .item-id-group {
   font-size: 0.72rem;
-  font-family: "SF Mono", "Fira Code", monospace;
+  font-family: 'SF Mono', 'Fira Code', monospace;
   color: var(--item-id-text);
   display: flex;
   align-items: center;
@@ -1096,7 +1171,7 @@ h3 {
   line-height: 150%;
   border-radius: 999px;
   margin: 2px 6px 2px 0;
-  font-family: "SF Mono", "Fira Code", monospace;
+  font-family: 'SF Mono', 'Fira Code', monospace;
 }
 .type-badge-unit {
   background: var(--type-badge-unit-bg);
@@ -1144,7 +1219,7 @@ h3 {
   background: var(--feature-badge-bg);
   border-radius: 999px;
   margin: 2px 6px 2px 0;
-  font-family: "SF Mono", "Fira Code", monospace;
+  font-family: 'SF Mono', 'Fira Code', monospace;
   color: var(--feature-badge-text);
 }
 .feature-count {
@@ -1296,7 +1371,7 @@ h3 {
   padding: 4px 6px;
   border-radius: 9999px;
   font-weight: 700;
-  font-family: "SF Mono", "Fira Code", "Cascadia Code", Consolas, monospace;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1324,7 +1399,12 @@ h3 {
   background: linear-gradient(90deg, var(--cg-a), var(--cg-b));
 }
 .cg-has-white {
-  background: linear-gradient(90deg, var(--cg-a) 0%, var(--combo-heading-gradient) 65%, var(--combo-heading-gradient-soft) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--cg-a) 0%,
+    var(--combo-heading-gradient) 65%,
+    var(--combo-heading-gradient-soft) 100%
+  );
 }
 .cg-has-one {
   background: linear-gradient(90deg, var(--cg-a), var(--cg-a) 88);
@@ -1349,7 +1429,7 @@ h3 {
 }
 .cg-card-id {
   font-size: 0.72rem;
-  font-family: "SF Mono", "Fira Code", monospace;
+  font-family: 'SF Mono', 'Fira Code', monospace;
   color: var(--cg-card-id-text);
   display: flex;
   justify-content: center;
@@ -1466,7 +1546,7 @@ h3 {
     grid-template-columns: repeat(3, 1fr);
   }
   .archetype-select-custom {
-    top: 42px;
+    top: 44px;
   }
   .card-img-enlarge {
     max-width: 92vw;
