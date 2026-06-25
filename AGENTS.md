@@ -1,12 +1,12 @@
 # GCG Deck Archetype Rank
 
-- **Node requirements**: Scripts (`tier-table.js`, `archetype-grid.js`) are ESM with top-level `await`; use Node ≥ 20 (`source ~/.nvm/nvm.sh && nvm use 20` before builds). `html/` and `deploy/` are generated assets and must stay in sync.
+- **Node requirements**: Scripts (`tier-table.js`, `archetype-grid.js`, `deploy-assets.js`) are ESM with top-level `await`; use Node ≥ 20 (`source ~/.nvm/nvm.sh && nvm use 20` before builds). `deploy/` is the only generated asset directory.
 - **Styling conventions**: repo uses ESM, single quotes only, no semicolons, and manual HTML verification instead of automated tests/CI.
 
 ## High signal commands
 | Command | Notes |
 |---|---|
-| `npm run build` | Calls `node tier-table.js && node archetype-grid.js` to regenerate `html/` and `deploy/` from `data/` (see pipeline below). Always run from repo root with Node ≥ 20. |
+| `npm run build` | Calls `node tier-table.js && node archetype-grid.js && node deploy-assets.js` to regenerate `deploy/` from `data/` (see pipeline below). Always run from repo root with Node ≥ 20. |
 | `npm run serve` | `python3 -m http.server 9090 -d deploy` to inspect generated site locally. |
 | `npm run deploy` | `netlify deploy --prod` (already configured for deploy/ output). |
 | `npx eslint .` | Lints JS (expect the longstanding “Unexpected token '.'” due to parser limits; lint failure is already known). |
@@ -15,8 +15,8 @@
 | `node download-images.js` | Fetches card `.webp` assets under `data/images/`. |
 
 ## Pipeline overview
-- Scrapers populate `data/*.json`; `tier-table.js` + `archetype-grid.js` consume that data via shared helpers in `archetype-utils.js`/`archetype-renderer.js` to emit HTML/JS under `html/`/`deploy/`.
-- `deploy/` is the served artifact; `html/` is the source-of-truth build. Treat both as derived—don’t edit manual changes directly inside them.
+- Scrapers populate `data/*.json`; `tier-table.js` + `archetype-grid.js` consume that data via shared helpers in `archetype-utils.js`/`archetype-renderer.js` to emit HTML/JS under `deploy/`; `deploy-assets.js` minifies CSS and copies JS into `deploy/`.
+- `deploy/` is the served artifact. Treat it as derived—don't edit manual changes directly inside it.
 - `archetype-client.js` powers the analysis page (Chart.js charts, tabs, cards); `dark-mode-client.js` manages the toggle, exposing `window.onDarkModeToggle` for chart redraw hooks.
 - Chart.js 4.4.7 is loaded via CDN, not bundled.
 

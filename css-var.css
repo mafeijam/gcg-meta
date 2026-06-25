@@ -123,11 +123,19 @@
   --c-avg-dot-dark-4: rgba(251, 146, 60, 0.9);
 
   /* ── Semantic (light) ── */
+
+  /* Text */
   --text-body: var(--c-gray-800);
   --text-secondary: var(--c-gray-600);
   --text-muted: var(--c-gray-500);
   --text-on-dark: var(--c-white);
   --text-link: var(--c-blue-700);
+  --subtitle-color: var(--text-secondary);
+  --heading-color: var(--text-body);
+  --nav-link-hover: var(--text-link);
+  --nav-link-active: var(--text-link);
+
+  /* Backgrounds */
   --bg-body: var(--c-gray-75);
   --bg-surface: var(--c-white);
   --bg-alt: var(--c-gray-100);
@@ -135,12 +143,16 @@
   --bg-hover-strong: var(--c-gray-300);
   --bg-card: var(--c-white);
   --bg-elevated: var(--c-gray-750);
+
+  /* Borders & Shadows */
   --border: var(--c-gray-300);
   --border-light: var(--c-gray-200);
   --border-strong: var(--c-gray-400);
   --shadow-card: 0 1px 3px var(--c-shadow-sm);
   --shadow-dropdown: 0 4px 12px var(--c-shadow-md);
   --shadow-modal: 0 8px 40px var(--c-shadow-lg);
+
+  /* Tiers */
   --tier-bar-base: var(--c-gray-300);
   --tier-color-1: var(--c-red-300);
   --tier-color-1-5: var(--c-orange-300);
@@ -152,6 +164,8 @@
   --tier-none-bg: var(--c-gray-300);
   --tier-none-text: var(--c-gray-500);
   --deck-tier-text: var(--text-body);
+
+  /* Type Badges */
   --type-badge-unit-bg: var(--c-blue-100);
   --type-badge-unit-text: var(--c-blue-800);
   --type-badge-pilot-bg: var(--c-green-100);
@@ -160,11 +174,73 @@
   --type-badge-command-text: var(--c-red-800);
   --type-badge-base-bg: var(--c-purple-100);
   --type-badge-base-text: var(--c-purple-800);
-  --msd-option-active-bg: var(--c-blue-50);
-  --msd-option-active-text: var(--c-blue-700);
+
+  /* Tables */
+  --table-bg: var(--bg-card);
+  --table-text: var(--text-secondary);
+  --table-header-bg: var(--bg-elevated);
+  --table-header-text: var(--text-on-dark);
+  --table-border-color: var(--border);
+  --table-row-alt: var(--bg-alt);
+  --table-row-hover: var(--bg-hover);
+
+  /* Dropdowns */
+  --dropdown-bg: var(--bg-card);
+  --dropdown-border: var(--border);
+  --dropdown-text: var(--text-body);
+  --dropdown-hover: var(--bg-hover);
+  --dropdown-active-bg: var(--msd-option-active-bg);
+  --dropdown-active-text: var(--msd-option-active-text);
+
+  /* Tabs */
+  --tab-hover-bg: var(--bg-hover);
+  --tab-active-bg: var(--bg-card);
+  --tab-active-border: var(--text-link);
+  --tab-active-text: var(--text-link);
+
+  /* Archetype Cards */
+  --archetype-card-bg: var(--bg-card);
+  --archetype-card-border: var(--border);
+  --archetype-name-text: var(--c-gray-700);
+
+  /* Charts & Analysis */
+  --chart-box-bg: var(--bg-card);
+  --chart-tab-bg: var(--bg-card);
+  --chart-tab-border: var(--border);
+  --chart-tab-active-bg: var(--bg-hover);
+  --chart-tab-active-text: var(--text-body);
+
+  /* Combo Headings */
+  --combo-heading-text: var(--c-gray-600);
+  --combo-heading-light-text: var(--c-gray-100);
+  --combo-heading-border: var(--c-gray-300);
+  --combo-heading-gradient: var(--c-gray-300);
+  --combo-heading-gradient-soft: var(--c-gray-50);
+
+  /* Modal */
+  --modal-border-color: var(--border);
+  --modal-header-text: var(--text-secondary);
+
+  /* Deck URL */
   --deck-url-btn-hover-bg: var(--c-blue-100);
   --deck-url-winner-bg: var(--c-yellow-50);
   --deck-url-winner-border: var(--c-gold-light);
+  --deck-url-item-bg: var(--c-gray-200);
+  --deck-url-item-border: var(--c-gray-300);
+  --deck-url-item-text: var(--c-blue-600);
+  --deck-url-header-text: var(--text-secondary);
+
+  /* Dark Toggle */
+  --dark-toggle-bg: var(--bg-surface);
+  --dark-toggle-text: var(--text-body);
+  --dark-toggle-border: var(--border);
+  --dark-toggle-hover: var(--bg-hover);
+
+  /* Misc */
+  --msd-option-active-bg: var(--c-blue-50);
+  --msd-option-active-text: var(--c-blue-700);
+  --deck-preview-border: var(--border-light);
+  --loading-border: var(--border-light);
   --icon-wins-color: var(--c-gold);
   --avg-dot-empty: var(--c-gray-200);
   --avg-dot-tier-1: var(--c-avg-dot-1);
@@ -186,65 +262,27 @@
   --feature-badge-text: var(--c-gray-750);
   --card-img-overlay: var(--c-overlay-card);
   --card-img-backdrop: var(--c-overlay);
-  --deck-url-item-bg: var(--c-gray-200);
-  --deck-url-item-border: var(--c-gray-300);
-  --deck-url-item-text: var(--c-blue-600);
-  --deck-url-header-text: var(--text-secondary);
-  --combo-heading-text: var(--c-gray-300);
-  --combo-heading-border: var(--c-gray-300);
-  --combo-heading-gradient: var(--c-gray-300);
-  --combo-heading-gradient-soft: var(--c-gray-50);
   --item-id-text: var(--c-gray-700);
-  --archetype-name-text: var(--c-gray-700);
   --cg-card-id-text: var(--c-gray-700);
   --item-separator-dot: var(--c-gray-500);
   --deck-icon-color: var(--c-gray-500);
-  --subtitle-color: var(--text-secondary);
-  --heading-color: var(--text-body);
-  --nav-link-hover: var(--text-link);
-  --nav-link-active: var(--text-link);
-  --table-bg: var(--bg-card);
-  --table-text: var(--text-secondary);
-  --table-header-bg: var(--bg-elevated);
-  --table-header-text: var(--text-on-dark);
-  --table-border-color: var(--border);
-  --table-row-alt: var(--bg-alt);
-  --table-row-hover: var(--bg-hover);
-  --dropdown-bg: var(--bg-card);
-  --dropdown-border: var(--border);
-  --dropdown-text: var(--text-body);
-  --dropdown-hover: var(--bg-hover);
-  --dropdown-active-bg: var(--msd-option-active-bg);
-  --dropdown-active-text: var(--msd-option-active-text);
-  --tab-hover-bg: var(--bg-hover);
-  --tab-active-bg: var(--bg-card);
-  --tab-active-border: var(--text-link);
-  --tab-active-text: var(--text-link);
-  --archetype-card-bg: var(--bg-card);
-  --archetype-card-border: var(--border);
-  --chart-box-bg: var(--bg-card);
-  --chart-tab-bg: var(--bg-card);
-  --chart-tab-border: var(--border);
-  --chart-tab-active-bg: var(--bg-hover);
-  --chart-tab-active-text: var(--text-body);
-  --modal-border-color: var(--border);
-  --modal-header-text: var(--text-secondary);
-  --deck-preview-border: var(--border-light);
-  --loading-border: var(--border-light);
-  --dark-toggle-bg: var(--bg-surface);
-  --dark-toggle-text: var(--text-body);
-  --dark-toggle-border: var(--border);
-  --dark-toggle-hover: var(--bg-hover);
-
 }
 
 html.dark-mode {
   /* ── Semantic (dark) ── */
+
+  /* Text */
   --text-body: var(--c-gray-400);
   --text-secondary: var(--c-gray-500);
   --text-muted: var(--c-gray-550);
   --text-on-dark: var(--c-gray-500);
   --text-link: var(--c-blue-500);
+  --subtitle-color: var(--c-gray-575);
+  --heading-color: var(--c-gray-550);
+  --nav-link-hover: var(--c-blue-500);
+  --nav-link-active: var(--c-blue-500);
+
+  /* Backgrounds */
   --bg-body: var(--c-gray-800);
   --bg-surface: var(--c-gray-750);
   --bg-alt: var(--c-gray-850);
@@ -252,6 +290,8 @@ html.dark-mode {
   --bg-hover-strong: var(--c-gray-725);
   --bg-card: var(--c-gray-850);
   --bg-elevated: var(--c-gray-900);
+
+  /* Borders & Shadows */
   --border: var(--c-gray-650);
   --border-light: var(--c-gray-725);
   --border-strong: var(--c-gray-600);
@@ -259,46 +299,7 @@ html.dark-mode {
   --shadow-dropdown: 0 4px 12px var(--c-shadow-sm-dark);
   --shadow-modal: 0 8px 40px var(--c-shadow-lg);
 
-  --avg-dot-empty: var(--c-gray-950);
-  --avg-dot-tier-1: var(--c-avg-dot-dark-1);
-  --avg-dot-tier-2: var(--c-avg-dot-dark-2);
-  --avg-dot-tier-3: var(--c-avg-dot-dark-3);
-  --avg-dot-tier-4: var(--c-avg-dot-dark-4);
-
-  --subtitle-color: var(--c-gray-575);
-  --heading-color: var(--c-gray-550);
-  --nav-link-hover: var(--c-blue-500);
-  --nav-link-active: var(--c-blue-500);
-  --table-bg: var(--c-gray-750);
-  --table-text: var(--c-gray-500);
-  --table-header-bg: var(--c-gray-900);
-  --table-header-text: var(--c-gray-500);
-  --table-border-color: var(--c-gray-725);
-  --table-row-alt: var(--c-gray-850);
-  --table-row-hover: var(--c-gray-725);
-  --dropdown-bg: var(--c-gray-750);
-  --dropdown-border: var(--c-gray-650);
-  --dropdown-text: var(--c-gray-400);
-  --dropdown-hover: var(--c-gray-650);
-  --dropdown-active-bg: var(--c-blue-700);
-  --dropdown-active-text: var(--c-white);
-  --tab-hover-bg: var(--c-gray-650);
-  --tab-active-bg: var(--c-gray-850);
-  --tab-active-border: var(--c-gray-725);
-  --tab-active-text: var(--c-indigo-400);
-  --archetype-card-bg: var(--c-gray-850);
-  --archetype-card-border: var(--c-gray-725);
-  --chart-box-bg: var(--c-gray-850);
-  --chart-tab-bg: var(--c-gray-850);
-  --chart-tab-border: var(--c-gray-725);
-  --chart-tab-active-bg: var(--c-gray-650);
-  --chart-tab-active-text: var(--c-gray-400);
-  --modal-border-color: var(--c-gray-725);
-  --modal-header-text: var(--c-gray-400);
-  --deck-preview-border: var(--c-gray-725);
-  --loading-border: var(--c-gray-700);
-
-  /* ── Semantic color tokens (dark) ── */
+  /* Tiers */
   --tier-bar-base: var(--c-gray-725);
   --tier-color-1: var(--c-red-700);
   --tier-color-1-5: var(--c-orange-700);
@@ -310,6 +311,8 @@ html.dark-mode {
   --tier-none-bg: var(--c-gray-725);
   --tier-none-text: var(--c-gray-550);
   --deck-tier-text: var(--text-body);
+
+  /* Type Badges */
   --type-badge-unit-bg: var(--c-blue-850);
   --type-badge-unit-text: var(--c-blue-300);
   --type-badge-pilot-bg: var(--c-green-900);
@@ -318,32 +321,86 @@ html.dark-mode {
   --type-badge-command-text: var(--c-red-300);
   --type-badge-base-bg: var(--c-purple-950);
   --type-badge-base-text: var(--c-purple-200);
-  --msd-option-active-bg: var(--c-blue-700);
-  --msd-option-active-text: var(--c-white);
+
+  /* Tables */
+  --table-bg: var(--c-gray-750);
+  --table-text: var(--c-gray-500);
+  --table-header-bg: var(--c-gray-900);
+  --table-header-text: var(--c-gray-500);
+  --table-border-color: var(--c-gray-725);
+  --table-row-alt: var(--c-gray-850);
+  --table-row-hover: var(--c-gray-725);
+
+  /* Dropdowns */
+  --dropdown-bg: var(--c-gray-750);
+  --dropdown-border: var(--c-gray-650);
+  --dropdown-text: var(--c-gray-400);
+  --dropdown-hover: var(--c-gray-650);
+  --dropdown-active-bg: var(--c-blue-700);
+  --dropdown-active-text: var(--c-white);
+
+  /* Tabs */
+  --tab-hover-bg: var(--c-gray-650);
+  --tab-active-bg: var(--c-gray-850);
+  --tab-active-border: var(--c-gray-725);
+  --tab-active-text: var(--c-indigo-400);
+
+  /* Archetype Cards */
+  --archetype-card-bg: var(--c-gray-850);
+  --archetype-card-border: var(--c-gray-725);
+  --archetype-name-text: var(--c-gray-400);
+
+  /* Charts & Analysis */
+  --chart-box-bg: var(--c-gray-850);
+  --chart-tab-bg: var(--c-gray-850);
+  --chart-tab-border: var(--c-gray-725);
+  --chart-tab-active-bg: var(--c-gray-650);
+  --chart-tab-active-text: var(--c-gray-400);
+
+  /* Combo Headings */
+  --combo-heading-text: var(--c-gray-300);
+  --combo-heading-light-text: var(--c-gray-400);
+  --combo-heading-border: var(--c-gray-700);
+  --combo-heading-gradient: var(--c-gray-400);
+  --combo-heading-gradient-soft: var(--c-gray-400);
+
+  /* Modal */
+  --modal-border-color: var(--c-gray-725);
+  --modal-header-text: var(--c-gray-400);
+
+  /* Deck URL */
   --deck-url-btn-hover-bg: var(--c-blue-850);
   --deck-url-winner-bg: var(--c-amber-850);
   --deck-url-winner-border: var(--c-yellow-500);
-  --icon-wins-color: var(--c-gold);
   --deck-url-item-bg: var(--c-gray-750);
   --deck-url-item-border: var(--c-gray-650);
   --deck-url-item-text: var(--c-blue-400);
   --deck-url-header-text: var(--text-muted);
-  --combo-heading-text: var(--c-gray-400);
-  --combo-heading-border: var(--c-gray-700);
-  --combo-heading-gradient: var(--c-gray-400);
-  --combo-heading-gradient-soft: var(--c-gray-400);
-  --item-id-text: var(--c-gray-400);
-  --archetype-name-text: var(--c-gray-400);
-  --cg-card-id-text: var(--c-gray-400);
-  --item-separator-dot: var(--c-gray-550);
-  --deck-icon-color: var(--c-gray-400);
-  --feature-badge-bg: var(--c-gray-750);
-  --feature-badge-text: var(--c-gray-550);
-  --card-img-overlay: var(--c-overlay-card);
-  --card-img-backdrop: var(--c-overlay-strong);
+
+  /* Dark Toggle */
   --dark-toggle-bg: var(--bg-card);
   --dark-toggle-text: var(--text-muted);
   --dark-toggle-border: var(--border-strong);
   --dark-toggle-hover: var(--bg-hover-strong);
+
+  /* Misc */
+  --msd-option-active-bg: var(--c-blue-700);
+  --msd-option-active-text: var(--c-white);
+  --deck-preview-border: var(--c-gray-725);
+  --loading-border: var(--c-gray-700);
+  --icon-wins-color: var(--c-gold);
+  --avg-dot-empty: var(--c-gray-950);
+  --avg-dot-tier-1: var(--c-avg-dot-dark-1);
+  --avg-dot-tier-2: var(--c-avg-dot-dark-2);
+  --avg-dot-tier-3: var(--c-avg-dot-dark-3);
+  --avg-dot-tier-4: var(--c-avg-dot-dark-4);
   --sig-cards-color: var(--table-text);
+  --feature-badge-bg: var(--c-gray-750);
+  --feature-badge-text: var(--c-gray-550);
+  --card-img-overlay: var(--c-overlay-card);
+  --card-img-backdrop: var(--c-overlay-strong);
+  --item-id-text: var(--c-gray-500);
+  --cg-card-id-text: var(--c-gray-500);
+  --item-separator-dot: var(--c-gray-550);
+  --deck-icon-color: var(--c-gray-400);
 }

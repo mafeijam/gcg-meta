@@ -1,4 +1,4 @@
-import { writeFile, mkdir, cp } from 'node:fs/promises'
+import { writeFile, mkdir } from 'node:fs/promises'
 import { readFileSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -59,12 +59,14 @@ if (isMain) {
 
   // Generate per-series shell fragments + per-archetype fragments
   let archFragCount = 0
+  const deployDir = join(__dirname, 'deploy')
+  await mkdir(deployDir, { recursive: true })
   for (const s of seriesData) {
     const shell = renderSeriesShell(s)
-    await writeFile(join(__dirname, 'html', `archetype-grid-${s.value}.frag.html`), shell)
+    await writeFile(join(deployDir, `archetype-grid-${s.value}.frag.html`), shell)
     for (const [comboIdx, arch] of s.archetypes.entries()) {
       const archFrag = renderArchetypeTableWrap(s.value, arch, comboIdx)
-      await writeFile(join(__dirname, 'html', `archetype-grid-${s.value}-${comboIdx}.frag.html`), archFrag)
+      await writeFile(join(deployDir, `archetype-grid-${s.value}-${comboIdx}.frag.html`), archFrag)
       archFragCount++
     }
   }
@@ -148,29 +150,6 @@ const ARCH_LEVEL_DATA = ${JSON.stringify(levelDataBySeries)}
 </body>
 </html>`
 
-  const htmlDir = join(__dirname, 'html')
-  await mkdir(htmlDir, { recursive: true })
-  await writeFile(join(htmlDir, 'archetype-analysis.html'), html)
-  console.log('Written to html/archetype-analysis.html')
-
-  // Copy all deployable assets to deploy/
-  const deployDir = join(__dirname, 'deploy')
-  await mkdir(deployDir, { recursive: true })
-  await cp(join(htmlDir, 'archetype-analysis.html'), join(deployDir, 'archetype-analysis.html'))
-  for (const s of seriesData) {
-    await cp(
-      join(htmlDir, `archetype-grid-${s.value}.frag.html`),
-      join(deployDir, `archetype-grid-${s.value}.frag.html`),
-    )
-    for (let i = 0; i < s.archetypes.length; i++) {
-      await cp(
-        join(htmlDir, `archetype-grid-${s.value}-${i}.frag.html`),
-        join(deployDir, `archetype-grid-${s.value}-${i}.frag.html`),
-      )
-    }
-  }
-  for (const f of ['css-var.css', 'styles.css', 'archetype-client.js', 'dark-mode-client.js', 'dark-mode.css']) {
-    await cp(join(__dirname, f), join(deployDir, f))
-  }
-  console.log('Deployed to deploy/')
+  await writeFile(join(deployDir, 'archetype-analysis.html'), html)
+  console.log('Written to deploy/archetype-analysis.html')
 }

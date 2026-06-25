@@ -1,4 +1,4 @@
-import { writeFile, copyFile, mkdir } from 'node:fs/promises'
+import { writeFile, mkdir } from 'node:fs/promises'
 import { readFileSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -126,7 +126,7 @@ if (isMain) {
             r.tier === null
               ? '<span class="deck-tier deck-tier-none">--</span>'
               : deckTierBadge(r.tier)
-          return `<tr>
+          return `<tr data-tier="${r.tier === null ? 'none' : r.tier.id.replace('-', '.')}">
         <td class="combo-td">
           <a href="archetype-analysis.html?series=${s.value}&archetype=${r.origIdx}" class="arch-link">
             <span class="combo-name-wrapper">
@@ -288,13 +288,8 @@ document.addEventListener('click', function(e) {
 </body>
 </html>`
 
-  const htmlDir = join(__dirname, 'html')
-  await mkdir(join(__dirname, 'html'), { recursive: true })
-  await writeFile(join(htmlDir, 'tier-table.html'), html)
-  await copyFile(join(htmlDir, 'tier-table.html'), join(__dirname, 'deploy', 'index.html'))
-  await copyFile(join(__dirname, 'css-var.css'), join(__dirname, 'deploy', 'css-var.css'))
-  await copyFile(join(__dirname, 'styles.css'), join(__dirname, 'deploy', 'styles.css'))
-  await copyFile(join(__dirname, 'dark-mode-client.js'), join(__dirname, 'deploy', 'dark-mode-client.js'))
-  await copyFile(join(__dirname, 'dark-mode.css'), join(__dirname, 'deploy', 'dark-mode.css'))
-  console.log('Written to html/tier-table.html (and deploy/)')
+  const deployDir = join(__dirname, 'deploy')
+  await mkdir(deployDir, { recursive: true })
+  await writeFile(join(deployDir, 'index.html'), html)
+  console.log('Written to deploy/index.html')
 }

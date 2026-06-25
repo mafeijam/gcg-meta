@@ -2,7 +2,7 @@
   "type": "module",
   "scripts": {
     "serve": "python3 -m http.server 9090 -d deploy",
-    "build": "node tier-table.js && node archetype-grid.js",
+    "build": "node deploy-assets.js && node tier-table.js && node archetype-grid.js",
     "deploy": "netlify deploy --prod"
   },
   "dependencies": {
