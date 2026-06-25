@@ -84,10 +84,9 @@ function typePill(type) {
 }
 
 // Renders a small colored dot span for a card color.
-function colorDotSm(color, margin) {
+function colorDotSm(color) {
   const hex = colorHex[color] || '#718096'
-  const marginStyle = margin ? `;margin:${margin}` : ''
-  return `<span class="color-dot" style="background:${hex}${marginStyle}"></span>`
+  return `<span class="color-dot" style="background:${hex}"></span>`
 }
 
 // Renders the combo name with optional signature card names.
@@ -175,7 +174,7 @@ function renderItem(card, extraClass = '') {
   return `<div class="archetype-item ${extraClass}${card.inWinner ? ' winner' : ''}${card.rarity?.startsWith('LR') ? ' is-lr' : ''}">
     <div class="item-header">
       <div class="item-id-group">
-        ${colorDotSm(card.color, '0 4px 0 0')}${card.cardId}
+        ${colorDotSm(card.color)}${card.cardId}
         <span class="card-rarity">${(card.rarity || '').replace(/\+{1,2}$/, '')}</span>
       </div>
       <div class="archetype-avg">${dots}</div>
@@ -185,21 +184,15 @@ function renderItem(card, extraClass = '') {
     <div class="archetype-name">${card.name}</div>
     <div class="item-footer">
       <div class="item-rate" data-tier="${tierId}">${rate}%</div>
-      <div class="item-icons">
-        <span class="item-icon" role="img" aria-label="Decks included: ${card.decksIncluded}" title="Decks included: ${card.decksIncluded}">
-          <span class="item-icon-graphic deck-icon" aria-hidden="true"></span>
-          <span class="item-icon-value">${card.decksIncluded}</span>
-        </span>
-        ${card.winnerDeckCount ? `
-          <span class="item-icon" role="img" aria-label="Wins: ${card.winnerDeckCount}" title="Wins: ${card.winnerDeckCount}">
-            <span class="item-icon-graphic win-icon" aria-hidden="true"></span>
-            <span class="item-icon-value">${card.winnerDeckCount}</span>
-          </span>
-        ` : ''}
-      </div>
+    <div class="item-icons">
+      <span class="item-icon" role="img" aria-label="Decks included: ${card.decksIncluded}" title="Decks included: ${card.decksIncluded}">${card.decksIncluded}</span>
+      ${card.winnerDeckCount ? `
+        <span class="item-icon icon-wins" role="img" aria-label="Wins: ${card.winnerDeckCount}" title="Wins: ${card.winnerDeckCount}">${card.winnerDeckCount}</span>
+      ` : ''}
     </div>
-    <div class="archetype-item-bar" data-tier="${tierId}"></div>
-  </div>`
+  </div>
+  <div class="archetype-item-bar" data-tier="${tierId}"></div>
+</div>`
 }
 
 // Renders type count badges (e.g. "UNIT: 12") for non-zero types.
@@ -544,7 +537,7 @@ function renderCardGridByCombo(series) {
             (card) => `
           <div class="cg-card${card.rarity?.startsWith('LR') ? ' is-lr' : ''}">
             <div class="cg-card-img">${imgHtml(card.cardId, '')}</div>
-            <div class="cg-card-id">${colorDotSm(card.color, '0 4px 0 0')}${card.cardId}</div>
+            <div class="cg-card-id">${colorDotSm(card.color)}${card.cardId}</div>
           </div>
         `,
           )

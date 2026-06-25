@@ -1,0 +1,349 @@
+:root {
+  /* ── White ── */
+  --c-white: #fff;
+
+  /* ── Gray ── */
+  --c-gray-50: #f8fafc;
+  --c-gray-75: #f5f7fa;
+  --c-gray-100: #f7fafc;
+  --c-gray-200: #edf2f7;
+  --c-gray-300: #e2e8f0;
+  --c-gray-400: #cbd5e0;
+  --c-gray-500: #a0aec0;
+  --c-gray-550: #94a3b8;
+  --c-gray-575: #8291a7;
+  --c-gray-600: #718096;
+  --c-gray-650: #4a5568;
+  --c-gray-700: #475569;
+  --c-gray-725: #334155;
+  --c-gray-750: #2d3748;
+  --c-gray-800: #1a202c;
+  --c-gray-850: #1e293b;
+  --c-gray-900: #0f172a;
+  --c-gray-950: #111827;
+
+
+  /* ── Blue ── */
+  --c-blue-50: #ebf8ff;
+  --c-blue-100: #dbeafe;
+  --c-blue-300: #93c5fd;
+  --c-blue-400: #63b3ed;
+  --c-blue-500: #4a9fe3;
+  --c-blue-600: #3182ce;
+  --c-blue-700: #2b6cb0;
+  --c-blue-800: #1e40af;
+  --c-blue-850: #1e3a5f;
+  --c-blue-900: #1e3a8a;
+
+  /* ── Indigo ── */
+  --c-indigo-400: #667eea;
+  --c-indigo-500: #818cf8;
+
+  /* ── Purple ── */
+  --c-purple-100: #f3e8ff;
+  --c-purple-200: #d8b4fe;
+  --c-purple-300: #c4b5fd;
+  --c-purple-400: #b794f4;
+  --c-purple-500: #805ad5;
+  --c-purple-600: #6b21a8;
+  --c-purple-800: #4c1d95;
+  --c-purple-950: #2a1a3a;
+
+  /* ── Red ── */
+  --c-red-100: #fee2e2;
+  --c-red-300: #fca5a5;
+  --c-red-400: #fc8181;
+  --c-red-500: #e53e3e;
+  --c-red-700: #b91c1c;
+  --c-red-800: #991b1b;
+  --c-red-950: #3a1a1a;
+
+  /* ── Orange ── */
+  --c-orange-100: #ffedd5;
+  --c-orange-300: #fdba74;
+  --c-orange-700: #b45309;
+  --c-orange-800: #9a3412;
+
+  /* ── Amber / Gold ── */
+  --c-amber-400: #fbbf24;
+  --c-amber-500: #b7791f;
+  --c-amber-600: #f59e0b;
+  --c-amber-650: #d97706;
+  --c-amber-700: #ca8a04;
+  --c-amber-850: #6b5a1e;
+  --c-gold: #d69e2e;
+  --c-gold-light: #f6c23e;
+
+  /* ── Yellow ── */
+  --c-yellow-50: #fff9db;
+  --c-yellow-500: #eab308;
+  --c-yellow-600: #ca8a04;
+
+  /* ── Green ── */
+  --c-green-100: #d1fae5;
+  --c-green-200: #6ee7b7;
+  --c-green-300: #86efac;
+  --c-green-400: #68d391;
+  --c-green-600: #38a169;
+  --c-green-700: #365314;
+  --c-green-800: #065f46;
+  --c-green-900: #1a3a2a;
+
+  /* ── Shadows ── */
+  --c-shadow-sm: rgba(0, 0, 0, 0.08);
+  --c-shadow-md: rgba(0, 0, 0, 0.12);
+  --c-shadow-md-alt: rgba(0, 0, 0, 0.15);
+  --c-shadow-lg: rgba(0, 0, 0, 0.25);
+  --c-shadow-xl: rgba(0, 0, 0, 0.35);
+  --c-shadow-2xl: rgba(0, 0, 0, 0.45);
+  --c-shadow-3xl: rgba(0, 0, 0, 0.5);
+
+  /* ── Overlays ── */
+  --c-overlay-card: rgba(0, 0, 0, 0.2);
+  --c-overlay: rgba(0, 0, 0, 0.5);
+  --c-overlay-strong: rgba(0, 0, 0, 0.7);
+  --c-qty-badge: rgba(26, 32, 44, 0.75);
+  --c-white-alpha-8: rgba(255, 255, 255, 0.08);
+
+  /* ── Dark-mode shadows ── */
+  --c-shadow-sm-dark: rgba(0, 0, 0, 0.3);
+  --c-shadow-3xl-dark: rgba(0, 0, 0, 0.4);
+  --c-shadow-2xl-dark: rgba(0, 0, 0, 0.45);
+
+  /* ── Avg-dot fills ── */
+  --c-avg-dot-1: rgba(29, 78, 216, 0.4);
+  --c-avg-dot-2: rgba(29, 78, 216, 0.6);
+  --c-avg-dot-3: rgba(29, 78, 216, 0.8);
+  --c-avg-dot-4: rgba(29, 78, 216, 1);
+
+  /* ── Avg-dot fills (dark) ── */
+  --c-avg-dot-dark-1: rgba(251, 146, 60, 0.3);
+  --c-avg-dot-dark-2: rgba(251, 146, 60, 0.5);
+  --c-avg-dot-dark-3: rgba(251, 146, 60, 0.7);
+  --c-avg-dot-dark-4: rgba(251, 146, 60, 0.9);
+
+  /* ── Semantic (light) ── */
+  --text-body: var(--c-gray-800);
+  --text-secondary: var(--c-gray-600);
+  --text-muted: var(--c-gray-500);
+  --text-on-dark: var(--c-white);
+  --text-link: var(--c-blue-700);
+  --bg-body: var(--c-gray-75);
+  --bg-surface: var(--c-white);
+  --bg-alt: var(--c-gray-100);
+  --bg-hover: var(--c-gray-200);
+  --bg-hover-strong: var(--c-gray-300);
+  --bg-card: var(--c-white);
+  --bg-elevated: var(--c-gray-750);
+  --border: var(--c-gray-300);
+  --border-light: var(--c-gray-200);
+  --border-strong: var(--c-gray-400);
+  --shadow-card: 0 1px 3px var(--c-shadow-sm);
+  --shadow-dropdown: 0 4px 12px var(--c-shadow-md);
+  --shadow-modal: 0 8px 40px var(--c-shadow-lg);
+  --tier-bar-base: var(--c-gray-300);
+  --tier-color-1: var(--c-red-300);
+  --tier-color-1-5: var(--c-orange-300);
+  --tier-color-2: var(--c-amber-400);
+  --tier-color-2-5: var(--c-green-300);
+  --tier-color-3: var(--c-blue-300);
+  --tier-color-4: var(--c-purple-300);
+  --tier-color-5: var(--c-purple-300);
+  --tier-none-bg: var(--c-gray-300);
+  --tier-none-text: var(--c-gray-500);
+  --deck-tier-text: var(--text-body);
+  --type-badge-unit-bg: var(--c-blue-100);
+  --type-badge-unit-text: var(--c-blue-800);
+  --type-badge-pilot-bg: var(--c-green-100);
+  --type-badge-pilot-text: var(--c-green-800);
+  --type-badge-command-bg: var(--c-red-100);
+  --type-badge-command-text: var(--c-red-800);
+  --type-badge-base-bg: var(--c-purple-100);
+  --type-badge-base-text: var(--c-purple-800);
+  --msd-option-active-bg: var(--c-blue-50);
+  --msd-option-active-text: var(--c-blue-700);
+  --deck-url-btn-hover-bg: var(--c-blue-100);
+  --deck-url-winner-bg: var(--c-yellow-50);
+  --deck-url-winner-border: var(--c-gold-light);
+  --icon-wins-color: var(--c-gold);
+  --avg-dot-empty: var(--c-gray-200);
+  --avg-dot-tier-1: var(--c-avg-dot-1);
+  --avg-dot-tier-2: var(--c-avg-dot-2);
+  --avg-dot-tier-3: var(--c-avg-dot-3);
+  --avg-dot-tier-4: var(--c-avg-dot-4);
+  --loader-top-color: var(--c-indigo-500);
+  --card-rarity-lr-color: var(--c-gold);
+  --sig-blue: var(--c-blue-600);
+  --sig-red: var(--c-red-500);
+  --sig-green: var(--c-green-600);
+  --sig-yellow: var(--c-amber-500);
+  --sig-purple: var(--c-purple-500);
+  --sig-black: var(--c-gray-650);
+  --sig-white: var(--text-secondary);
+  --sig-sep: var(--text-secondary);
+  --sig-cards-color: var(--table-text);
+  --feature-badge-bg: var(--c-gray-300);
+  --feature-badge-text: var(--c-gray-750);
+  --card-img-overlay: var(--c-overlay-card);
+  --card-img-backdrop: var(--c-overlay);
+  --deck-url-item-bg: var(--c-gray-200);
+  --deck-url-item-border: var(--c-gray-300);
+  --deck-url-item-text: var(--c-blue-600);
+  --deck-url-header-text: var(--text-secondary);
+  --combo-heading-text: var(--c-gray-300);
+  --combo-heading-border: var(--c-gray-300);
+  --combo-heading-gradient: var(--c-gray-300);
+  --combo-heading-gradient-soft: var(--c-gray-50);
+  --item-id-text: var(--c-gray-700);
+  --archetype-name-text: var(--c-gray-700);
+  --cg-card-id-text: var(--c-gray-700);
+  --item-separator-dot: var(--c-gray-500);
+  --deck-icon-color: var(--c-gray-500);
+  --subtitle-color: var(--text-secondary);
+  --heading-color: var(--text-body);
+  --nav-link-hover: var(--text-link);
+  --nav-link-active: var(--text-link);
+  --table-bg: var(--bg-card);
+  --table-text: var(--text-secondary);
+  --table-header-bg: var(--bg-elevated);
+  --table-header-text: var(--text-on-dark);
+  --table-border-color: var(--border);
+  --table-row-alt: var(--bg-alt);
+  --table-row-hover: var(--bg-hover);
+  --dropdown-bg: var(--bg-card);
+  --dropdown-border: var(--border);
+  --dropdown-text: var(--text-body);
+  --dropdown-hover: var(--bg-hover);
+  --dropdown-active-bg: var(--msd-option-active-bg);
+  --dropdown-active-text: var(--msd-option-active-text);
+  --tab-hover-bg: var(--bg-hover);
+  --tab-active-bg: var(--bg-card);
+  --tab-active-border: var(--text-link);
+  --tab-active-text: var(--text-link);
+  --archetype-card-bg: var(--bg-card);
+  --archetype-card-border: var(--border);
+  --chart-box-bg: var(--bg-card);
+  --chart-tab-bg: var(--bg-card);
+  --chart-tab-border: var(--border);
+  --chart-tab-active-bg: var(--bg-hover);
+  --chart-tab-active-text: var(--text-body);
+  --modal-border-color: var(--border);
+  --modal-header-text: var(--text-secondary);
+  --deck-preview-border: var(--border-light);
+  --loading-border: var(--border-light);
+  --dark-toggle-bg: var(--bg-surface);
+  --dark-toggle-text: var(--text-body);
+  --dark-toggle-border: var(--border);
+  --dark-toggle-hover: var(--bg-hover);
+
+}
+
+html.dark-mode {
+  /* ── Semantic (dark) ── */
+  --text-body: var(--c-gray-400);
+  --text-secondary: var(--c-gray-500);
+  --text-muted: var(--c-gray-550);
+  --text-on-dark: var(--c-gray-500);
+  --text-link: var(--c-blue-500);
+  --bg-body: var(--c-gray-800);
+  --bg-surface: var(--c-gray-750);
+  --bg-alt: var(--c-gray-850);
+  --bg-hover: var(--c-gray-650);
+  --bg-hover-strong: var(--c-gray-725);
+  --bg-card: var(--c-gray-850);
+  --bg-elevated: var(--c-gray-900);
+  --border: var(--c-gray-650);
+  --border-light: var(--c-gray-725);
+  --border-strong: var(--c-gray-600);
+  --shadow-card: 0 1px 3px var(--c-shadow-2xl-dark);
+  --shadow-dropdown: 0 4px 12px var(--c-shadow-sm-dark);
+  --shadow-modal: 0 8px 40px var(--c-shadow-lg);
+
+  --avg-dot-empty: var(--c-gray-950);
+  --avg-dot-tier-1: var(--c-avg-dot-dark-1);
+  --avg-dot-tier-2: var(--c-avg-dot-dark-2);
+  --avg-dot-tier-3: var(--c-avg-dot-dark-3);
+  --avg-dot-tier-4: var(--c-avg-dot-dark-4);
+
+  --subtitle-color: var(--c-gray-575);
+  --heading-color: var(--c-gray-550);
+  --nav-link-hover: var(--c-blue-500);
+  --nav-link-active: var(--c-blue-500);
+  --table-bg: var(--c-gray-750);
+  --table-text: var(--c-gray-500);
+  --table-header-bg: var(--c-gray-900);
+  --table-header-text: var(--c-gray-500);
+  --table-border-color: var(--c-gray-725);
+  --table-row-alt: var(--c-gray-850);
+  --table-row-hover: var(--c-gray-725);
+  --dropdown-bg: var(--c-gray-750);
+  --dropdown-border: var(--c-gray-650);
+  --dropdown-text: var(--c-gray-400);
+  --dropdown-hover: var(--c-gray-650);
+  --dropdown-active-bg: var(--c-blue-700);
+  --dropdown-active-text: var(--c-white);
+  --tab-hover-bg: var(--c-gray-650);
+  --tab-active-bg: var(--c-gray-850);
+  --tab-active-border: var(--c-gray-725);
+  --tab-active-text: var(--c-indigo-400);
+  --archetype-card-bg: var(--c-gray-850);
+  --archetype-card-border: var(--c-gray-725);
+  --chart-box-bg: var(--c-gray-850);
+  --chart-tab-bg: var(--c-gray-850);
+  --chart-tab-border: var(--c-gray-725);
+  --chart-tab-active-bg: var(--c-gray-650);
+  --chart-tab-active-text: var(--c-gray-400);
+  --modal-border-color: var(--c-gray-725);
+  --modal-header-text: var(--c-gray-400);
+  --deck-preview-border: var(--c-gray-725);
+  --loading-border: var(--c-gray-700);
+
+  /* ── Semantic color tokens (dark) ── */
+  --tier-bar-base: var(--c-gray-725);
+  --tier-color-1: var(--c-red-700);
+  --tier-color-1-5: var(--c-orange-700);
+  --tier-color-2: var(--c-amber-700);
+  --tier-color-2-5: var(--c-green-700);
+  --tier-color-3: var(--c-blue-900);
+  --tier-color-4: var(--c-purple-800);
+  --tier-color-5: var(--c-purple-800);
+  --tier-none-bg: var(--c-gray-725);
+  --tier-none-text: var(--c-gray-550);
+  --deck-tier-text: var(--text-body);
+  --type-badge-unit-bg: var(--c-blue-850);
+  --type-badge-unit-text: var(--c-blue-300);
+  --type-badge-pilot-bg: var(--c-green-900);
+  --type-badge-pilot-text: var(--c-green-200);
+  --type-badge-command-bg: var(--c-red-950);
+  --type-badge-command-text: var(--c-red-300);
+  --type-badge-base-bg: var(--c-purple-950);
+  --type-badge-base-text: var(--c-purple-200);
+  --msd-option-active-bg: var(--c-blue-700);
+  --msd-option-active-text: var(--c-white);
+  --deck-url-btn-hover-bg: var(--c-blue-850);
+  --deck-url-winner-bg: var(--c-amber-850);
+  --deck-url-winner-border: var(--c-yellow-500);
+  --icon-wins-color: var(--c-gold);
+  --deck-url-item-bg: var(--c-gray-750);
+  --deck-url-item-border: var(--c-gray-650);
+  --deck-url-item-text: var(--c-blue-400);
+  --deck-url-header-text: var(--text-muted);
+  --combo-heading-text: var(--c-gray-400);
+  --combo-heading-border: var(--c-gray-700);
+  --combo-heading-gradient: var(--c-gray-400);
+  --combo-heading-gradient-soft: var(--c-gray-400);
+  --item-id-text: var(--c-gray-400);
+  --archetype-name-text: var(--c-gray-400);
+  --cg-card-id-text: var(--c-gray-400);
+  --item-separator-dot: var(--c-gray-550);
+  --deck-icon-color: var(--c-gray-400);
+  --feature-badge-bg: var(--c-gray-750);
+  --feature-badge-text: var(--c-gray-550);
+  --card-img-overlay: var(--c-overlay-card);
+  --card-img-backdrop: var(--c-overlay-strong);
+  --dark-toggle-bg: var(--bg-card);
+  --dark-toggle-text: var(--text-muted);
+  --dark-toggle-border: var(--border-strong);
+  --dark-toggle-hover: var(--bg-hover-strong);
+  --sig-cards-color: var(--table-text);
+}

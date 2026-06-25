@@ -78,11 +78,12 @@ if (isMain) {
 <meta name="viewport" content="initial-scale=1.0">
 <title>GCG Deck Archetype Analysis</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<link rel="stylesheet" href="archetype-grid.css?v=${assetHash(join(__dirname, 'archetype-grid.css'))}">
+<link rel="stylesheet" href="css-var.css?v=${assetHash(join(__dirname, 'css-var.css'))}">
+<link rel="stylesheet" href="styles.css?v=${assetHash(join(__dirname, 'styles.css'))}">
 <link rel="stylesheet" href="dark-mode.css?v=${assetHash(join(__dirname, 'dark-mode.css'))}">
 <script>if(localStorage.getItem('dark-mode')==='true')document.documentElement.classList.add('dark-mode')</script>
 </head>
-<body>
+<body class="page-archetype">
 <div class="container">
 <div class="page-nav">
   <a href="index.html">Archetype Rank</a>
@@ -168,7 +169,7 @@ const ARCH_LEVEL_DATA = ${JSON.stringify(levelDataBySeries)}
       )
     }
   }
-  for (const f of ['archetype-grid.css', 'archetype-client.js', 'dark-mode-client.js', 'dark-mode.css']) {
+  for (const f of ['css-var.css', 'styles.css', 'archetype-client.js', 'dark-mode-client.js', 'dark-mode.css']) {
     await cp(join(__dirname, f), join(deployDir, f))
   }
   console.log('Deployed to deploy/')

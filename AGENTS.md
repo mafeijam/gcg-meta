@@ -1,41 +1,26 @@
 # GCG Deck Archetype Rank
 
-Static site generator for Gundam Card Game tournament analysis. Two pages: tier-table ranking (`index.html`) and per-archetype analysis (`archetype-analysis.html`).
+- **Node requirements**: Scripts (`tier-table.js`, `archetype-grid.js`) are ESM with top-level `await`; use Node ≥ 20 (`source ~/.nvm/nvm.sh && nvm use 20` before builds). `html/` and `deploy/` are generated assets and must stay in sync.
+- **Styling conventions**: repo uses ESM, single quotes only, no semicolons, and manual HTML verification instead of automated tests/CI.
 
-## Commands
+## High signal commands
+| Command | Notes |
+|---|---|
+| `npm run build` | Calls `node tier-table.js && node archetype-grid.js` to regenerate `html/` and `deploy/` from `data/` (see pipeline below). Always run from repo root with Node ≥ 20. |
+| `npm run serve` | `python3 -m http.server 9090 -d deploy` to inspect generated site locally. |
+| `npm run deploy` | `netlify deploy --prod` (already configured for deploy/ output). |
+| `npx eslint .` | Lints JS (expect the longstanding “Unexpected token '.'” due to parser limits; lint failure is already known). |
+| `node tournament-*.js` | (Re-)scrape tournament CSV sources into `data/`. |
+| `node card.js` | Pulls new card DB into `data/cards.json`. |
+| `node download-images.js` | Fetches card `.webp` assets under `data/images/`. |
 
-| Command | Action |
-|---------|--------|
-| `npm run build` | Full build: `node tier-table.js && node archetype-grid.js` |
-| `npm run serve` | `python3 -m http.server 9090 -d deploy` |
-| `npm run deploy` | `netlify deploy --prod` |
-| `npx eslint .` | Lint all JS (no semicolons, single quotes) |
-| `node tournament-*.js` | Scrape/re-scrape tournament data |
-| `node card.js` | Fetch card DB to `data/cards.json` |
-| `node download-images.js` | Download card .webp to `data/images/` |
+## Pipeline overview
+- Scrapers populate `data/*.json`; `tier-table.js` + `archetype-grid.js` consume that data via shared helpers in `archetype-utils.js`/`archetype-renderer.js` to emit HTML/JS under `html/`/`deploy/`.
+- `deploy/` is the served artifact; `html/` is the source-of-truth build. Treat both as derived—don’t edit manual changes directly inside them.
+- `archetype-client.js` powers the analysis page (Chart.js charts, tabs, cards); `dark-mode-client.js` manages the toggle, exposing `window.onDarkModeToggle` for chart redraw hooks.
+- Chart.js 4.4.7 is loaded via CDN, not bundled.
 
-## Pipeline
-
-Scrapers (`tournament-all.js`, `tournament-egman.js`, `tournament-limitless.js`) → JSON in `data/` → `tier-table.js` + `archetype-grid.js` → `html/` + `deploy/`.
-
-Build scripts use ESM with top-level `await` (Node >= 20).
-
-## Architecture
-
-- `archetype-utils.js` / `archetype-renderer.js` — shared data processing and HTML rendering (imported by both build scripts)
-- `archetype-client.js` — client-side JS for analysis page (Chart.js, tab switching, card preview modals, sticky tabs)
-- `dark-mode-client.js` — client-side dark toggle with `localStorage` + `window.onDarkModeToggle` callback pattern
-- `html/` — build output (source of truth), `deploy/` — served copy (both must stay in sync)
-- Analysis page pre-renders per-archetype HTML fragments at build time (lazy-loaded at runtime)
-- Chart.js 4.4.7 loaded from CDN (not bundled)
-
-## Dark mode
-
-`dark-mode-client.js` owns toggle + visibility. Archetype charts update via `window.onDarkModeToggle` callback (set in `archetype-client.js`). Both files are loaded together.
-
-## Conventions
-
-- ESM (`"type": "module"`), no semicolons, single quotes, `async`/`await`
-- No test framework — manual verification of generated HTML output
-- No CI, no `.gitignore`, no README (until now)
-- `playwright` in deps but unused
+## Workflow reminders
+- Always regenerate the build after changing data, templates, or styles before verifying — `npm run build` + manual inspection of `deploy/index.html` (desktop/mobile widths) is the acceptance step.
+- New CSS must rely on defined palette variables and semantic tokens: `css-var.css` exports the palette and is toggled by `html.dark-mode`. Changes here impact both `styles.css` and `dark-mode.css` (dark-mode only holds overrides for genuinely unique colors).
+- `tier-table.js` handles desktop table + mobile cards; score/tier order and mobile grid placement are sensitive—adjust both the `<td>` order and mobile CSS when adding/removing columns.

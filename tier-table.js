@@ -130,7 +130,7 @@ if (isMain) {
         <td class="combo-td">
           <a href="archetype-analysis.html?series=${s.value}&archetype=${r.origIdx}" class="arch-link">
             <span class="combo-name-wrapper">
-              ${r.colors.map((c) => colorDotSm(c, '0 3px 0 0')).join('')}
+              ${r.colors.map((c) => colorDotSm(c)).join('')}
               <span class="combo-base">${r.combo}</span>
             </span>
             ${r.sigCards ? `<span class="sig-cards"> ${r.sigCount > 2 ? '≈' : ''}(${r.sigCards})</span>` : ''}
@@ -221,11 +221,12 @@ ${g.indices.map((i) => `<div class="msd-option${i === 0 ? ' active' : ''}" oncli
 <meta charset="UTF-8">
 <meta name="viewport" content="initial-scale=1.0">
 <title>GCG Deck Archetype Rank</title>
-<link rel="stylesheet" href="tier-table.css?v=${assetHash(join(__dirname, 'tier-table.css'))}">
+<link rel="stylesheet" href="css-var.css?v=${assetHash(join(__dirname, 'css-var.css'))}">
+<link rel="stylesheet" href="styles.css?v=${assetHash(join(__dirname, 'styles.css'))}">
 <link rel="stylesheet" href="dark-mode.css?v=${assetHash(join(__dirname, 'dark-mode.css'))}">
 <script>if(localStorage.getItem('dark-mode')==='true')document.documentElement.classList.add('dark-mode')</script>
 </head>
-<body>
+<body class="page-tier">
 <div class="container">
 <div class="page-nav">
   <span class="active">Archetype Rank</span>
@@ -291,7 +292,8 @@ document.addEventListener('click', function(e) {
   await mkdir(join(__dirname, 'html'), { recursive: true })
   await writeFile(join(htmlDir, 'tier-table.html'), html)
   await copyFile(join(htmlDir, 'tier-table.html'), join(__dirname, 'deploy', 'index.html'))
-  await copyFile(join(__dirname, 'tier-table.css'), join(__dirname, 'deploy', 'tier-table.css'))
+  await copyFile(join(__dirname, 'css-var.css'), join(__dirname, 'deploy', 'css-var.css'))
+  await copyFile(join(__dirname, 'styles.css'), join(__dirname, 'deploy', 'styles.css'))
   await copyFile(join(__dirname, 'dark-mode-client.js'), join(__dirname, 'deploy', 'dark-mode-client.js'))
   await copyFile(join(__dirname, 'dark-mode.css'), join(__dirname, 'deploy', 'dark-mode.css'))
   console.log('Written to html/tier-table.html (and deploy/)')

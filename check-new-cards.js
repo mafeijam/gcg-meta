@@ -67,5 +67,5 @@ if (newIds.length === 0) {
   for (const id of newIds) {
     console.log(`  ${id}`)
   }
-  console.log(`\nRun 'node card.js' to fetch details.`)
+  console.log('\nRun \'node card.js\' to fetch details.')
 }
